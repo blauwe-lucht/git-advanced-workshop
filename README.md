@@ -15,6 +15,8 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | Script | What it shows |
 | --- | --- |
 | `rebase.sh` | Graph before and after a rebase, plus the reflog to show the original commits were replaced |
+| `emulate-squash.sh` | Emulate a squash using `git reset --soft` — same result, different mechanism |
+| `interactive-rebase.sh` | Sets up WIP commits then hands off to the student to squash them with `git rebase -i` |
 
 ## Merging
 
