@@ -27,6 +27,8 @@ git commit -m "add feature"
 
 git log --oneline
 
-# hand off to the student — mark the wip commits as 'squash' or 'fixup'
+# start interactive rebase, mark the first commit as 'pick', the rest as 'squash'
 # to fold them into the first commit
 git rebase -i HEAD~3
+
+git log --oneline
