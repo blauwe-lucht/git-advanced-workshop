@@ -10,14 +10,6 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `commit.sh` | Creating a simple commit |
 | `amend.sh` | Amending a commit and viewing the reflog |
 
-## Rebase
-
-| Script | What it shows |
-| --- | --- |
-| `rebase.sh` | Graph before and after a rebase, plus the reflog to show the original commits were replaced |
-| `emulate-squash.sh` | Emulate a squash using `git reset --soft` — same result, different mechanism |
-| `interactive-rebase.sh` | Sets up WIP commits then hands off to the student to squash them with `git rebase -i` |
-
 ## Merging
 
 | Script | What it shows |
@@ -25,8 +17,24 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `merge-fast-forward.sh` | Fast-forward merge — pointer moves forward, no merge commit |
 | `merge-no-ff.sh` | Explicit merge commit even when fast-forward is possible |
 | `merge-squash.sh` | Squash all feature commits into a single commit on main |
-| `merge-rebase.sh` | Rebase feature onto main, then fast-forward — linear history, individual commits preserved |
 | `merge-conflict.sh` | What a merge conflict looks like and the conflict markers Git leaves behind |
+
+## Rebase
+
+| Script | What it shows |
+| --- | --- |
+| `rebase.sh` | Graph before and after a rebase, plus the reflog to show the original commits were replaced |
+| `merge-rebase.sh` | Rebase feature onto main, then fast-forward — linear history, individual commits preserved |
+| `emulate-squash.sh` | Emulate a squash using `git reset --soft` — same result, different mechanism |
+| `interactive-rebase.sh` | Sets up WIP commits then hands off to the student to squash them with `git rebase -i` |
+
+## Reset
+
+| Script | What it shows |
+| --- | --- |
+| `reset-soft.sh` | Moves the branch pointer back, changes remain staged |
+| `reset-mixed.sh` | Moves the branch pointer back, changes dropped to working tree |
+| `reset-hard.sh` | Moves the branch pointer back, changes are gone |
 
 ## Amend and force push
 
