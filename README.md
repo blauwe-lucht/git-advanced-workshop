@@ -8,7 +8,7 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | Script | What it shows |
 | --- | --- |
 | `commit.sh` | Creating a simple commit |
-| `amend.sh` | Amending a commit and viewing the reflog |
+| `reflog.sh` | Uses amend to show how the reflog retains the original commit |
 
 ## Merging
 
