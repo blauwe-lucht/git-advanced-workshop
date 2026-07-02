@@ -10,6 +10,14 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `commit.sh` | Creating a simple commit |
 | `reflog.sh` | Uses amend to show how the reflog retains the original commit |
 
+## Amend
+
+| Script | What it shows |
+| --- | --- |
+| `amend-message.sh` | Fix a typo in the commit message |
+| `amend-forgotten-file.sh` | Add a file that was accidentally left out of the commit |
+| `amend-accidentally-added-file.sh` | Remove a file that was accidentally included in the commit |
+
 ## Merging
 
 | Script | What it shows |
