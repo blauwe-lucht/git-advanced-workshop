@@ -3,6 +3,12 @@
 Each script is a self-contained demo that sets up a fresh `demo/` directory and
 runs through a scenario with `set -x` so every command is visible as it executes.
 
+## Collaboration
+
+| Script | What it shows |
+| --- | --- |
+| `collaborate.sh` | Alice and Bob working on feature branches and merging to main to emulate a PR/MR workflow |
+
 ## Basics
 
 | Script | What it shows |
