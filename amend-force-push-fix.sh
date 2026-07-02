@@ -33,5 +33,16 @@ git push --force-with-lease
 cd ..
 
 cd alice
-git pull --no-rebase --no-edit
-# conflicts
+git pull --no-rebase || true
+
+git log --oneline --graph --all
+
+# abort the conflicting merge — origin/main is already up to date from the pull
+git merge --abort
+
+# alice's branch still contains her copy of "second commit" which bob already
+# amended — a plain rebase would replay it and conflict. HEAD~1 points to
+# that commit, so --onto skips it and only replays alice's unique "third commit"
+git rebase --onto origin/main HEAD~1
+
+git log --oneline --graph --all
