@@ -10,6 +10,12 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `commit.sh` | Creating a simple commit |
 | `amend.sh` | Amending a commit and viewing the reflog |
 
+## Rebase
+
+| Script | What it shows |
+| --- | --- |
+| `rebase.sh` | Graph before and after a rebase, plus the reflog to show the original commits were replaced |
+
 ## Merging
 
 | Script | What it shows |
