@@ -2,10 +2,10 @@
 
 set -xe
 
-rm -rf demo
+rm -rf repos
 
-mkdir demo
-cd demo
+mkdir repos
+cd repos
 
 git init
 

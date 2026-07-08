@@ -2,8 +2,8 @@
 
 set -xeuo pipefail
 
-rm -rf demo
-mkdir demo && cd demo
+rm -rf repos
+mkdir repos && cd repos
 git init --bare origin
 
 git clone origin alice

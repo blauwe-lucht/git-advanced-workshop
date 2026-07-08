@@ -1,6 +1,6 @@
 # Git Advanced Workshop
 
-Each script is a self-contained demo that sets up a fresh `demo/` directory and
+Each script is a self-contained demo that sets up a fresh `repos/` directory and
 runs through a scenario with `set -x` so every command is visible as it executes.
 
 ## Collaboration
