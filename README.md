@@ -3,18 +3,12 @@
 Each script is a self-contained demo that sets up a fresh `repos/` directory and
 runs through a scenario with `set -x` so every command is visible as it executes.
 
-## Collaboration
-
-| Script | What it shows |
-| --- | --- |
-| `collaborate.sh` | Alice and Bob working on feature branches and merging to main to emulate a PR/MR workflow |
-
 ## Basics
 
 | Script | What it shows |
 | --- | --- |
 | `commit.sh` | Creating a simple commit |
-| `reflog.sh` | Uses amend to show how the reflog retains the original commit |
+| `collaborate.sh` | Alice and Bob working on feature branches and merging to main to emulate a PR/MR workflow |
 
 ## Amend
 
@@ -23,6 +17,12 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `amend-message.sh` | Fix a typo in the commit message |
 | `amend-forgotten-file.sh` | Add a file that was accidentally left out of the commit |
 | `amend-accidentally-added-file.sh` | Remove a file that was accidentally included in the commit |
+
+## Reflog
+
+| Script | What it shows |
+| --- | --- |
+| `reflog.sh` | Uses amend to show how the reflog retains the original commit |
 
 ## Merging
 
@@ -49,6 +49,7 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `reset-soft.sh` | Moves the branch pointer back, changes remain staged |
 | `reset-mixed.sh` | Moves the branch pointer back, changes dropped to working tree |
 | `reset-hard.sh` | Moves the branch pointer back, changes are gone |
+| `reset-undo-amend.sh` | Uses the reflog and `HEAD@{1}` to undo an amend |
 
 ## Amend and force push
 
