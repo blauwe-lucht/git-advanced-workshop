@@ -32,7 +32,7 @@ git push
 git log --oneline
 cd ..
 
-echo "bob amends hist last known commit and force-pushes without fetching first"
+echo "bob amends his last known commit and force-pushes without fetching first"
 # plain --force overwrites whatever is on the remote, no matter what's there,
 # unlike --force-with-lease it does not check that the remote hasn't moved
 cd bob
