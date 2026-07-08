@@ -51,6 +51,13 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `reset-hard.sh` | Moves the branch pointer back, changes are gone |
 | `reset-undo-amend.sh` | Uses the reflog and `HEAD@{1}` to undo an amend |
 
+## Force push safety
+
+| Script | What it shows |
+| --- | --- |
+| `force-without-lease.sh` | Plain `--force` silently overwrites someone else's pushed commit instead of being rejected |
+| `force-with-lease.sh` | `--force-with-lease` succeeding when the remote hasn't changed, and being rejected when someone else has pushed in the meantime |
+
 ## Amend and force push
 
 These scripts all share the same base scenario: Bob amends a commit that Alice already
@@ -66,9 +73,3 @@ commits, and how she handles the pull.
 
 The last two are a pair: `pull-conflict` sets up the problem, `fix` shows how to
 resolve it without losing Alice's work.
-
-## Force push safety
-
-| Script | What it shows |
-| --- | --- |
-| `force-with-lease.sh` | `--force-with-lease` succeeding when the remote hasn't changed, and being rejected when someone else has pushed in the meantime |
