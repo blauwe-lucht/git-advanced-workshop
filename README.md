@@ -80,6 +80,7 @@ resolve it without losing Alice's work.
 | --- | --- |
 | `crlf-danger.sh` | Alice writes a clean LF shell script; Bob's `autocrlf=true` silently rewrites it to CRLF on checkout and his `./greet.sh` breaks with a "bad interpreter" error, even though nobody edited the file |
 | `crlf-fix.sh` | Same setup, but `.gitattributes` pins `*.sh` to `eol=lf` before the script is ever committed, so Bob's checkout stays LF and `./greet.sh` just works |
+| `crlf-remediate.sh` | Same breakage as `crlf-danger.sh`, but Bob detects it (`file`, `grep`) and fixes it himself: adds `.gitattributes`, finds that a plain `git checkout --` won't rewrite a file it thinks is already up to date, then uses `git rm --cached` + `git reset --hard` to force it |
 
 `core.autocrlf` is pinned explicitly per clone in these scripts (rather than left
 to the machine's actual default) so they reproduce the exact same behavior
