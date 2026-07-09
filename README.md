@@ -73,3 +73,14 @@ commits, and how she handles the pull.
 
 The last two are a pair: `pull-conflict` sets up the problem, `fix` shows how to
 resolve it without losing Alice's work.
+
+## Line endings (CRLF/LF)
+
+| Script | What it shows |
+| --- | --- |
+| `crlf-danger.sh` | Alice writes a clean LF shell script; Bob's `autocrlf=true` silently rewrites it to CRLF on checkout and his `./greet.sh` breaks with a "bad interpreter" error, even though nobody edited the file |
+| `crlf-fix.sh` | Same setup, but `.gitattributes` pins `*.sh` to `eol=lf` before the script is ever committed, so Bob's checkout stays LF and `./greet.sh` just works |
+
+`core.autocrlf` is pinned explicitly per clone in these scripts (rather than left
+to the machine's actual default) so they reproduce the exact same behavior
+whether run on Linux, macOS, or Windows Git Bash.
