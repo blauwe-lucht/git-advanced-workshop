@@ -53,8 +53,7 @@ cd ..
 
 echo "##### bob fixes local mess #####" > /dev/null
 cd bob
-# The rm --cached is needed to remove greet.sh with incorrect line endings from the local repo
-git rm --cached greet.sh
+rm greet.sh
 git reset --hard
 file greet.sh
 ./greet.sh
