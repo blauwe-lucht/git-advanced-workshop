@@ -84,6 +84,7 @@ resolve it without losing Alice's work.
 | `crlf-preserve.sh` | With `autocrlf=false`, Git doesn't normalize anything: Alice commits one LF file and one CRLF file side by side, and both the committed blobs and Bob's checkout keep their original line endings byte-for-byte |
 | `crlf-renormalize.sh` | Same mixed LF/CRLF history as `crlf-preserve.sh`, but Alice adds `.gitattributes` to pin `*.txt` to `eol=lf` after the fact - which alone changes nothing - then `git add --renormalize .` rewrites just the file that predates the rule so history and Bob's checkout end up with LF |
 | `crlf-autocrlf-true.sh` | Alice's `autocrlf=true` converts her local CRLF file to LF on the way into the object database; Bob's fresh clone with no autocrlf conversion gets exactly what's stored - LF |
+| `crlf-autocrlf-drift.sh` | The most common cause of "every file in the repo shows a diff": Bob's clone was checked out under `autocrlf=true` (CRLF in his working tree), then his `autocrlf` setting changes to `false` without a fresh checkout - now every file compares as modified even though nobody touched one, and `git checkout -- .` is the fix |
 
 `core.autocrlf` is pinned explicitly per clone in these scripts (rather than left
 to the machine's actual default) so they reproduce the exact same behavior
