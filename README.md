@@ -85,6 +85,7 @@ resolve it without losing Alice's work.
 | `crlf-renormalize.sh` | Same mixed LF/CRLF history as `crlf-preserve.sh`, but Alice adds `.gitattributes` to pin `*.txt` to `eol=lf` after the fact - which alone changes nothing - then `git add --renormalize .` rewrites just the file that predates the rule so history and Bob's checkout end up with LF |
 | `crlf-autocrlf-true.sh` | Alice's `autocrlf=true` converts her local CRLF file to LF on the way into the object database; Bob's fresh clone with no autocrlf conversion gets exactly what's stored - LF |
 | `crlf-autocrlf-drift.sh` | The most common cause of "every file in the repo shows a diff": Bob's clone was checked out under `autocrlf=true` (CRLF in his working tree), then his `autocrlf` setting changes to `false` without a fresh checkout - now every file compares as modified even though nobody touched one, and `git checkout -- .` is the fix |
+| `crlf-attribute-overrides-autocrlf.sh` | Alice pins `*.sh` to LF via `.gitattributes` but leaves `notes.txt` unpinned; with `autocrlf=false` for both, Bob fakes cloning on Linux (`core.eol=lf`) and Charlie fakes cloning on Windows (`core.eol=crlf`) - Charlie's `greet.sh` still comes out LF because the `eol=lf` attribute overrides his `core.eol=crlf`, while his unpinned `notes.txt` still gets converted to CRLF |
 
 `core.autocrlf` is pinned explicitly per clone in these scripts (rather than left
 to the machine's actual default) so they reproduce the exact same behavior
