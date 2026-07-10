@@ -86,6 +86,8 @@ resolve it without losing Alice's work.
 | `crlf-autocrlf-true.sh` | Alice's `autocrlf=true` converts her local CRLF file to LF on the way into the object database; Bob's fresh clone with no autocrlf conversion gets exactly what's stored - LF |
 | `crlf-autocrlf-drift.sh` | The most common cause of "every file in the repo shows a diff": Bob's clone was checked out under `autocrlf=true` (CRLF in his working tree), then his `autocrlf` setting changes to `false` without a fresh checkout - now every file compares as modified even though nobody touched one, and `git checkout -- .` is the fix |
 | `crlf-attribute-overrides-autocrlf.sh` | Alice pins `*.sh` to LF via `.gitattributes` but leaves `notes.txt` unpinned; with `autocrlf=false` for both, Bob fakes cloning on Linux (`core.eol=lf`) and Charlie fakes cloning on Windows (`core.eol=crlf`) - Charlie's `greet.sh` still comes out LF because the `eol=lf` attribute overrides his `core.eol=crlf`, while his unpinned `notes.txt` still gets converted to CRLF |
+| `crlf-safecrlf-warn.sh` | Alice adds a perfectly ordinary LF file under `autocrlf=true` - `core.safecrlf=warn` prints "LF will be replaced by CRLF the next time Git touches it", naming the exact file, but lets the add/commit through anyway |
+| `crlf-safecrlf-true.sh` | Same ordinary LF file and `autocrlf=true`, but `core.safecrlf=true` refuses the `git add` outright with a fatal error |
 
 `core.autocrlf` is pinned explicitly per clone in these scripts (rather than left
 to the machine's actual default) so they reproduce the exact same behavior
