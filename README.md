@@ -17,6 +17,7 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `amend-message.sh` | Fix a typo in the commit message |
 | `amend-forgotten-file.sh` | Add a file that was accidentally left out of the commit |
 | `amend-accidentally-added-file.sh` | Remove a file that was accidentally included in the commit |
+| `amend-commit-before-last.sh` | Fix a typo in the commit before the last commit using `git rebase -i` - the exact steps are commented in the script |
 
 ## Reflog
 
