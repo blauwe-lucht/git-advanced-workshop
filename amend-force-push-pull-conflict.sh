@@ -8,6 +8,7 @@ git init --bare origin
 
 git clone origin alice
 
+echo "====> Alice creates two commits." > /dev/null
 cd alice
 echo "version 1" > file1.txt
 git add file1.txt
@@ -20,21 +21,24 @@ cd ..
 
 git clone origin bob
 
-# Alice makes a new commit (but doesn't push).
+echo "====> Alice makes a new commit (but doesn't push)." > /dev/null
 cd alice
 echo "new file by alice" >> file2.txt
 git add file2.txt
 git commit -am "third commit by alice"
 cd ..
 
-# Bob rewrites history and force pushes.
+echo "====> Bob rewrites history and force pushes." > /dev/null
 cd bob
 echo "version 2 amended" > file1.txt
 git commit --amend -am "bob amended second commit"
 git push --force-with-lease
 cd ..
 
-# Alice doesn't know about the forced push and does a pull.
+echo "====> Alice doesn't know about the forced push and does a pull." > /dev/null
+# This fixes the error from amend-force-push-pull-error.sh, but creates a merge with conflicts.
 cd alice
-git pull --no-rebase
+git pull --no-rebase || true
 # conflicts
+git status
+git log --oneline --graph --all
