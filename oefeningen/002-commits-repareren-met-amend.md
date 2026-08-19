@@ -26,7 +26,9 @@ inhoud laat zien.
 
 `--amend` werkt alleen op de *laatste* commit. Voor een oudere commit heb je een
 andere aanpak nodig. Schrijf een apart script `amend-commit-before-last.sh` en
-zoek zelf uit hoe je dit voor elkaar krijgt.
+zoek zelf uit hoe je dit voor elkaar krijgt - zonder `git rebase`, `git reset`
+of `git cherry-pick` te gebruiken. Je hebt tot nu toe alleen branches,
+`checkout` en `commit` nodig.
 
 ### Deel A — de historie opzetten
 
