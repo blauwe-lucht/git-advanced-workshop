@@ -67,3 +67,7 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 ### Stash
 
 - [016 - Werk opzijzetten met `git stash`](016-stash.md)
+
+### Worktree
+
+- [017 - Werk onderbreken met `git worktree`](017-worktree.md)
