@@ -12,16 +12,21 @@ Schrijf vanaf `template.sh` een script `stash.sh` (een gewone repo in `repos/`
 volstaat) dat het volgende doet:
 
 1. Maak een eerste commit.
-2. Wijzig een bestand, maar commit dat niet.
-3. Bekijk met `git status` dat er een niet-gecommitte wijziging is.
-4. Zet die wijziging opzij met `git stash`.
-5. Bekijk met `git status` dat de working tree weer schoon is.
-6. Bekijk de opgeslagen stash met `git stash list`.
-7. Haal de wijziging terug met `git stash pop`.
+2. Wijzig twee bestanden. Stage er één van (`git add`), laat de ander
+   unstaged.
+3. Bekijk met `git status` dat er zowel een staged als een unstaged wijziging
+   is.
+4. Zet beide opzij met `git stash`.
+5. Bekijk met `git status` dat de working tree en staging area schoon zijn.
+6. Bekijk de opgeslagen stash met `git stash list`, en de inhoud ervan met
+   `git stash show`.
+7. Haal de wijzigingen terug met `git stash pop`.
+8. Bekijk met `git status` dat de oorspronkelijke situatie weer hersteld is.
 
 **Klaar wanneer:** de working tree na stap 4 schoon is, `git stash list` daar
-één entry toont, en na stap 7 de wijziging weer aanwezig is en `git stash
-list` weer leeg is.
+één entry toont, en na stap 7 beide wijzigingen weer aanwezig zijn — inclusief
+dat het bestand dat je stage'de weer staged staat — en `git stash list` weer
+leeg is.
 
 ## Plus-oefening - alles wat `git stash` kan
 
