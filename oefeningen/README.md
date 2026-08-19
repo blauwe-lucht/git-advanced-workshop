@@ -37,7 +37,7 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 
 ### Rebase
 
-- [005 — Rebase & interactive rebase](005-rebase-en-interactive-rebase.md)
+- [005 — Rebase: een branch bijwerken op `main`](005-rebase-branch-bijwerken.md)
 
 ### Reset
 
@@ -54,3 +54,10 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 ### Regeleindes (CRLF/LF)
 
 - [009 — Regeleindes en `.gitattributes`](009-regeleindes-en-gitattributes.md)
+
+### Interactive rebase
+
+- [010 — Een typefout in een oudere commit repareren](010-interactive-rebase-typefout-repareren.md)
+- [011 — WIP-commits opschonen met interactive rebase](011-interactive-rebase-wip-opschonen.md)
+- [012 — Een per ongeluk toegevoegd bestand uit een oudere commit halen](012-interactive-rebase-edit-bestand-verwijderen.md)
+- [013 — Een vergeten wijziging in de juiste commit krijgen](013-interactive-rebase-vergeten-wijziging.md)

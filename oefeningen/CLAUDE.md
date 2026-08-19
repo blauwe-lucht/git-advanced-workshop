@@ -40,6 +40,13 @@ voordat je oefeningen toevoegt of aanpast.
   het doel en een "klaar wanneer"-check.
 - Deel de Plus altijd op in **Deel A / B / C** (soms D), oplopend in
   moeilijkheid, zodat elk afgerond deel al een succesje is.
+- **Interactie-regel:** een script mag geen meerdere interactieve stappen
+  vereisen. Als er interactie is (bijv. `git rebase -i`), staat die aan het
+  **eind** van het script, hooguit gevolgd door een statuscommando (`git log`,
+  `git reflog`). Ideaal is één script dat per Plus-deel verder wordt uitgebreid;
+  maar zodra een deel interactief is, wordt dát deel een **eigen script** (dus
+  bij interactive rebase: één script per deel). Zet nooit een tweede `rebase -i`
+  achter de eerste in hetzelfde script.
 - Verwijs naar [`../GIT_BEST_PRACTICES.md`](../GIT_BEST_PRACTICES.md) waar relevant.
 - Houd de markdown lint-schoon (witregels rond koppen en lijsten).
 
