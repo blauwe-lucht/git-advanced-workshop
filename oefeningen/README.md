@@ -61,3 +61,7 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 - [011 — WIP-commits opschonen met interactive rebase](011-interactive-rebase-wip-opschonen.md)
 - [012 — Een per ongeluk toegevoegd bestand uit een oudere commit halen](012-interactive-rebase-edit-bestand-verwijderen.md)
 - [013 — Een vergeten wijziging in de juiste commit krijgen](013-interactive-rebase-vergeten-wijziging.md)
+
+### Stash
+
+- [014 — Werk opzijzetten met `git stash`](014-stash.md)
