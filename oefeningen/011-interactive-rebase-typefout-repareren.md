@@ -1,4 +1,4 @@
-# Oefening 010 — Een typefout in een oudere commit repareren
+# Oefening 011 — Een typefout in een oudere commit repareren
 
 ## Doel
 
@@ -54,3 +54,17 @@ met ```git rebase -i ...```.
 
 Automatiseer de rebase van P1. Je script stopt dus niet meer na ```git rebase```
 maar zorgt er voor dat de interactive rebase automatisch plaats vindt.
+
+### Oefening P4 - controleer elke stap met `exec`
+
+Schrijf een apart script `interactive-rebase-exec.sh` dat eindigt met
+```git rebase -i ...```.
+
+- **Doel:** de todo-lijst van een interactive rebase kan ook een controle
+  bevatten die na iedere commit automatisch draait — zodat je meteen ziet bij
+  welke commit iets misgaat, in plaats van dat pas achteraf te ontdekken.
+  Bouw een reeks commits op waarvan er ergens in het midden eentje is die de
+  controle laat falen, en zorg dat de rebase daar duidelijk op wijst.
+- **Klaar wanneer:** de rebase stopt bij precies de commit waar de controle
+  faalt, en na het herstellen daarvan is de hele rebase zonder verdere
+  problemen afgerond.

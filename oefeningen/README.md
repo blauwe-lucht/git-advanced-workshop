@@ -38,30 +38,32 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 ### Rebase
 
 - [005 - Rebase: een branch bijwerken op `main`](005-rebase-branch-bijwerken.md)
+- [006 - Commits verplaatsen met `git rebase --onto`](006-rebase-onto.md)
 
 ### Reset
 
-- [006 - `reset --soft`, `--mixed` en `--hard`](006-reset-soft-mixed-hard.md)
+- [007 - `reset --soft`, `--mixed` en `--hard`](007-reset-soft-mixed-hard.md)
 
 ### Force push veilig
 
-- [007 - Veilig force-pushen met `--force-with-lease`](007-veilig-force-pushen.md)
+- [008 - Veilig force-pushen met `--force-with-lease`](008-veilig-force-pushen.md)
 
 ### Amend & force push
 
-- [008 - Amend + force push in een team](008-amend-en-force-push-in-een-team.md)
+- [009 - Amend + force push in een team](009-amend-en-force-push-in-een-team.md)
 
 ### Regeleindes (CRLF/LF)
 
-- [009 - Regeleindes en `.gitattributes`](009-regeleindes-en-gitattributes.md)
+- [010 - Regeleindes en `.gitattributes`](010-regeleindes-en-gitattributes.md)
 
 ### Interactive rebase
 
-- [010 - Een typefout in een oudere commit repareren](010-interactive-rebase-typefout-repareren.md)
-- [011 - WIP-commits opschonen met interactive rebase](011-interactive-rebase-wip-opschonen.md)
-- [012 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](012-interactive-rebase-edit-bestand-verwijderen.md)
-- [013 - Een vergeten wijziging in de juiste commit krijgen](013-interactive-rebase-vergeten-wijziging.md)
+- [011 - Een typefout in een oudere commit repareren](011-interactive-rebase-typefout-repareren.md)
+- [012 - WIP-commits opschonen met interactive rebase](012-interactive-rebase-wip-opschonen.md)
+- [013 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](013-interactive-rebase-edit-bestand-verwijderen.md)
+- [014 - Een vergeten wijziging in de juiste commit krijgen](014-interactive-rebase-vergeten-wijziging.md)
+- [015 - Eén commit opsplitsen in twee](015-interactive-rebase-splitsen.md)
 
 ### Stash
 
-- [014 - Werk opzijzetten met `git stash`](014-stash.md)
+- [016 - Werk opzijzetten met `git stash`](016-stash.md)

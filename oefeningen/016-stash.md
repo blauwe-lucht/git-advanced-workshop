@@ -1,4 +1,4 @@
-# Oefening 014 - Werk opzijzetten met `git stash`
+# Oefening 016 - Werk opzijzetten met `git stash`
 
 ## Doel
 
