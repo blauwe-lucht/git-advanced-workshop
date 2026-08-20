@@ -17,7 +17,7 @@ gewone repo in `repos/` volstaat) dat het volgende doet:
    bestand toevoegt dat er niet in hoort.
 3. Maak een derde commit.
 4. Bekijk de historie met `git log --oneline`.
-5. Start `git rebase -i HEAD~3`.
+5. Start `git rebase -i HEAD~2`.
 
 De rest is handwerk:
 
