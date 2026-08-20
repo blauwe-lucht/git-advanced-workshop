@@ -4,7 +4,9 @@
 
 Je leert onafgemaakt werk tijdelijk opzij te zetten zonder het te committen,
 zodat je een schone working tree hebt - bijvoorbeeld om snel iets anders te
-doen - en het later weer terug te halen.
+doen - en het later weer terug te halen. Een stash is geen los geheugentje
+maar een **stack**: je kunt meerdere keren achter elkaar iets opzijzetten, en
+haalt dan steeds de bovenste eraf.
 
 ## Basisoefening
 
@@ -18,15 +20,19 @@ volstaat) dat het volgende doet:
    is.
 4. Zet beide opzij met `git stash`.
 5. Bekijk met `git status` dat de working tree en staging area schoon zijn.
-6. Bekijk de opgeslagen stash met `git stash list`, en de inhoud ervan met
+6. Wijzig een derde bestand, en zet ook die wijziging opzij met `git stash`.
+   Er staan nu twee stashes op de stack.
+7. Bekijk de stack met `git stash list`, en de inhoud van beide entries met
    `git stash show`.
-7. Haal de wijzigingen terug met `git stash pop`.
-8. Bekijk met `git status` dat de oorspronkelijke situatie weer hersteld is.
+8. Haal de bovenste (dus meest recente) stash terug met `git stash pop`.
+9. Bekijk met `git stash list` dat er nog maar één stash over is - de oudste.
+10. Haal ook die terug met `git stash pop`.
+11. Bekijk met `git status` dat de oorspronkelijke situatie weer hersteld is.
 
-**Klaar wanneer:** de working tree na stap 4 schoon is, `git stash list` daar
-één entry toont, en na stap 7 beide wijzigingen weer aanwezig zijn — inclusief
-dat het bestand dat je stage'de weer staged staat — en `git stash list` weer
-leeg is.
+**Klaar wanneer:** na stap 6 toont `git stash list` twee entries met de
+meest recente bovenaan, na stap 8 nog maar één - de oudste - en na stap 10
+zijn alle drie de wijzigingen weer aanwezig — inclusief dat het bestand dat
+je stage'de weer staged staat — en `git stash list` is weer leeg.
 
 ## Plus-oefening - alles wat `git stash` kan
 
@@ -36,17 +42,28 @@ er allemaal mogelijk is. Elk deel is een **eigen script** dat je vanaf
 aan het **eind** van het script, hooguit gevolgd door een statuscommando
 (`git status`, `git stash list`).
 
-### Deel A - meerdere stashes, en niet zomaar de laatste
+### Deel A - de stack opruimen
+
+Schrijf een apart script `stash-pop-en-drop.sh`.
+
+- **Doel:** zet twee verschillende, onafhankelijke wijzigingen na elkaar
+  opzij. Haal specifiek de *oudste* van de twee terug, en verwijder de
+  nieuwste - zonder hem terug te halen - van de stack.
+- **Klaar wanneer:** de wijziging van de oudste stash staat weer in je
+  working tree, de wijziging van de nieuwste stash is nergens meer terug te
+  vinden, en `git stash list` is leeg.
+
+### Deel B - meerdere stashes, en niet zomaar de laatste
 
 Schrijf een apart script `stash-meerdere.sh`.
 
-- **Doel:** zet twee verschillende, onafhankelijke wijzigingen na elkaar
-  opzij, en haal daarna specifiek de *oudste* van de twee weer terug - zonder
-  de andere kwijt te raken.
-- **Klaar wanneer:** de oudste wijziging is teruggehaald, de andere staat nog
-  veilig in de stash-lijst.
+- **Doel:** zet drie verschillende, onafhankelijke wijzigingen na elkaar
+  opzij, en haal daarna specifiek de *oudste* van de drie weer terug - zonder
+  de andere twee kwijt te raken of van volgorde te laten wisselen.
+- **Klaar wanneer:** de oudste wijziging is teruggehaald, de andere twee staan
+  nog veilig en in de oorspronkelijke volgorde in de stash-lijst.
 
-### Deel B - alleen een deel van je wijzigingen stashen
+### Deel C - alleen een deel van je wijzigingen stashen
 
 Schrijf een apart script `stash-gedeeltelijk.sh`.
 
@@ -56,7 +73,7 @@ Schrijf een apart script `stash-gedeeltelijk.sh`.
 - **Klaar wanneer:** de wijziging die je wilde behouden staat nog steeds in je
   working tree (of is gecommit), en alleen de rest zit in de stash.
 
-### Deel C - ook nieuwe bestanden meenemen
+### Deel D - ook nieuwe bestanden meenemen
 
 Schrijf een apart script `stash-nieuwe-bestanden.sh`.
 
@@ -67,7 +84,7 @@ Schrijf een apart script `stash-nieuwe-bestanden.sh`.
   inclusief het nieuwe bestand - en na het terughalen beide weer aanwezig
   zijn.
 
-### Deel D - een stash die niet zomaar terug wil
+### Deel E - een stash die niet zomaar terug wil
 
 Schrijf een apart script `stash-conflict.sh`.
 
