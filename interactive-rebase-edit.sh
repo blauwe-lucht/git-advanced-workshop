@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Startpunt voor een nieuwe oefening. Kopieer dit bestand en bouw je scenario.
-# Elke oefening staat op zichzelf en maakt een verse repos/ from scratch, net
-# als de demo-scripts in de root. Heb je geen remote nodig? Laat de bare repo
-# en de clones weg en gebruik gewoon `git init` in repos/.
-
 set -xeuo pipefail
 
 rm -rf repos
