@@ -63,11 +63,12 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 - [013 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](013-interactive-rebase-edit-bestand-verwijderen.md)
 - [014 - Een vergeten wijziging in de juiste commit krijgen](014-interactive-rebase-vergeten-wijziging.md)
 - [015 - Eén commit opsplitsen in twee](015-interactive-rebase-splitsen.md)
+- [016 - Een vergeten bestand alsnog in de juiste commit krijgen](016-interactive-rebase-vergeten-bestand.md)
 
 ### Stash
 
-- [016 - Werk opzijzetten met `git stash`](016-stash.md)
+- [017 - Werk opzijzetten met `git stash`](017-stash.md)
 
 ### Worktree
 
-- [017 - Werk onderbreken met `git worktree`](017-worktree.md)
+- [018 - Werk onderbreken met `git worktree`](018-worktree.md)
