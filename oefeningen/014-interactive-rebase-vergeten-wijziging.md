@@ -2,8 +2,13 @@
 
 ## Doel
 
-Je hebt drie commits: commit 1, commit 2 en commit 3. Bestand A is gewijzigd
-in commit 3. Nu ontdek je dat je lokaal, nog niet gecommit, een wijziging aan
+Je hebt drie commits:
+
+- commit 1: bestanden A en B toegevoegd
+- commit 2: bestand B gewijzigd
+- commit 3: bestand B gewijzigd.
+
+Nu ontdek je dat je lokaal, nog niet gecommit, een wijziging aan
 bestand A hebt staan die eigenlijk in commit 2 had moeten zitten.
 
 ## Basisoefening
