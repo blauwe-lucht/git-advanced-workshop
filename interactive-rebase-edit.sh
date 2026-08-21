@@ -17,6 +17,8 @@ git clone origin alice
 git clone origin bob
 git clone origin charlie
 
+echo "##### Setting up old commit with secret #####" > /dev/null
+
 cd alice
 echo First commit > file.txt
 git add .
@@ -31,5 +33,23 @@ echo Third commit > file.txt
 git commit -am"Third commit"
 
 git rebase -i HEAD~2
+# set commands to
+# edit
+# pick
+# rebase will stop at second commit.
+
+echo "##### Status after rebase -i #####" > /dev/null
+git status
+echo "##### Removing secret.txt and committing #####" > /dev/null
+git rm secret.txt
+git commit --amend --no-edit
+git status
+
+echo "##### Continuing and finishing rebase #####" > /dev/null
+git rebase --continue
 
 git log --oneline --graph --all
+
+git show HEAD~2
+git show HEAD~1
+git show HEAD
