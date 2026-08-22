@@ -55,14 +55,3 @@ is gefaald.
   weer volledig terughaalt. Sluit af met een status (`git log`, `git reflog`).
 - **Klaar wanneer:** de originele losse wip-commits weer zichtbaar zijn
   in ```git log```.
-
-#### Deel C — een commit echt weggooien met `drop`
-
-Schrijf een apart script `interactive-rebase-drop.sh` vanaf `template.sh`.
-
-- **Doel:** tussen een paar prima commits zit er eentje die je helemaal niet
-  wilt behouden — geen invouwen zoals bij `squash`/`fixup`, maar volledig
-  verwijderen uit de historie, inclusief zijn wijzigingen.
-- **Klaar wanneer:** de ongewenste commit en zijn wijzigingen komen nergens
-  meer voor in `git log` of in de bestandsinhoud, de overige commits zijn
-  ongewijzigd, en er is geen lopende rebase meer.

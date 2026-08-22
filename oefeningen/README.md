@@ -61,14 +61,15 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 - [011 - Een typefout in een oudere commit repareren](011-interactive-rebase-typefout-repareren.md)
 - [012 - WIP-commits opschonen met interactive rebase](012-interactive-rebase-wip-opschonen.md)
 - [013 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](013-interactive-rebase-edit-bestand-verwijderen.md)
-- [014 - Een vergeten wijziging in de juiste commit krijgen](014-interactive-rebase-vergeten-wijziging.md)
-- [015 - Eén commit opsplitsen in twee](015-interactive-rebase-splitsen.md)
-- [016 - Een vergeten bestand alsnog in de juiste commit krijgen](016-interactive-rebase-vergeten-bestand.md)
+- [014 - Een commit echt weggooien met `drop`](014-interactive-rebase-drop.md)
+- [015 - Een vergeten wijziging in de juiste commit krijgen](015-interactive-rebase-vergeten-wijziging.md)
+- [016 - Eén commit opsplitsen in twee](016-interactive-rebase-splitsen.md)
+- [017 - Een vergeten bestand alsnog in de juiste commit krijgen](017-interactive-rebase-vergeten-bestand.md)
 
 ### Stash
 
-- [017 - Werk opzijzetten met `git stash`](017-stash.md)
+- [018 - Werk opzijzetten met `git stash`](018-stash.md)
 
 ### Worktree
 
-- [018 - Werk onderbreken met `git worktree`](018-worktree.md)
+- [019 - Werk onderbreken met `git worktree`](019-worktree.md)
