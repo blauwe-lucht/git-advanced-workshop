@@ -93,3 +93,9 @@ resolve it without losing Alice's work.
 `core.autocrlf` is pinned explicitly per clone in these scripts (rather than left
 to the machine's actual default) so they reproduce the exact same behavior
 whether run on Linux, macOS, or Windows Git Bash.
+
+## TODO
+
+- git hooks
+- LFS
+- submodules
