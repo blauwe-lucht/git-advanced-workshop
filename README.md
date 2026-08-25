@@ -94,8 +94,13 @@ resolve it without losing Alice's work.
 to the machine's actual default) so they reproduce the exact same behavior
 whether run on Linux, macOS, or Windows Git Bash.
 
+## Submodules
+
+| Script | What it shows |
+| --- | --- |
+| `submodule.sh` | Alice adds `shared-lib` as a submodule of `app` and writes `app.sh`, which sources `greet.sh` from it; Bob clones `app` and finds `libs/shared-lib` empty, so `app.sh` fails until `git submodule update --init`; alice pushes a new function to `shared-lib`, and Bob has to explicitly `git submodule update --remote`, start using it in `app.sh`, and commit the updated pointer before Alice sees it too |
+
 ## TODO
 
 - git hooks
 - LFS
-- submodules

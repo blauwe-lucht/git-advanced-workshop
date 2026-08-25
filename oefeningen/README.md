@@ -73,3 +73,7 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 ### Worktree
 
 - [019 - Werk onderbreken met `git worktree`](019-worktree.md)
+
+### Submodules
+
+- [020 - Een link naar een andere repo opnemen met `git submodule`](020-submodule.md)
