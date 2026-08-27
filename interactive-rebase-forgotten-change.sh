@@ -15,37 +15,45 @@ git clone origin charlie
 echo "##### Setting up commits #####" > /dev/null
 
 cd alice
-echo First commit > file.txt
+echo First commit > A.txt
+echo First commit > B.txt
 git add .
 git commit -m"Initial commit"
 
-echo Second commit >> file.txt
-echo New file added in the second commit > new-file.txt
-git commit -am"Second commit"
-# new-file.txt was never `git add`ed, so it's still untracked here.
+echo Second commit > A.txt
+echo Second commit > B.txt
+git add B.txt
+git commit -m"Second commit"
+# A.txt was modified but never `git add`ed, so the change is still unstaged here.
 
-echo Third commit >> file.txt
-git commit -am"Third commit"
+echo Third commit >> B.txt
+git add B.txt
+git commit -m"Third commit"
 
-echo "##### Status: new-file.txt was forgotten and is still untracked #####" > /dev/null
+echo "##### Status: A.txt's change was forgotten and is still unstaged #####" > /dev/null
 git status
+# git rebase -i refuses to start with unstaged changes to a tracked file
+# (unlike an untracked file, which it just leaves alone), so we can't
+# rebase yet - commit the forgotten change first, then fix it up in place.
 
-echo "##### The old way: edit the second commit directly #####" > /dev/null
-git rebase -i HEAD~2
-# set commands to
-# edit
-# pick
-# rebase will stop at the second commit.
+echo "##### Committing the forgotten change on top, to fix up into place later #####" > /dev/null
+git commit -am"Forgot to add A.txt in the second commit"
 
-echo "##### Status after rebase -i #####" > /dev/null
-git status
-echo "##### Adding the forgotten file and amending #####" > /dev/null
-git add new-file.txt
-git commit --amend --no-edit
-git status
-
-echo "##### Continuing and finishing rebase #####" > /dev/null
-git rebase --continue
+echo "##### rebase #####" > /dev/null
+git rebase -i HEAD~3
+# The todo list (oldest to newest) starts as:
+#   pick <Second commit>
+#   pick <Third commit>
+#   pick <Forgot to add A.txt in the second commit>
+#
+# Reorder it to:
+#   pick   <Second commit>
+#   squash <Forgot to add A.txt in the second commit>
+#   pick   <Third commit>
+#
+# "squash" merges that commit into the one above it and then opens an
+# editor so you can combine/edit the two commit messages into one -
+# e.g. just keep "Second commit" and discard the other message.
 
 git log --oneline --graph --all
 
