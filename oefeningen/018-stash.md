@@ -24,9 +24,9 @@ volstaat) dat het volgende doet:
    Er staan nu twee stashes op de stack.
 7. Bekijk de stack met `git stash list`, en de inhoud van beide entries met
    `git stash show`.
-8. Haal de bovenste (dus meest recente) stash terug met `git stash pop`.
+8. Haal de bovenste (dus meest recente) stash terug met `git stash pop --index`.
 9. Bekijk met `git stash list` dat er nog maar één stash over is - de oudste.
-10. Haal ook die terug met `git stash pop`.
+10. Haal ook die terug met `git stash pop --index`.
 11. Bekijk met `git status` dat de oorspronkelijke situatie weer hersteld is.
 
 **Klaar wanneer:** na stap 6 toont `git stash list` twee entries met de
