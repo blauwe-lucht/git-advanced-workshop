@@ -112,4 +112,5 @@ whether run on Linux, macOS, or Windows Git Bash.
 - git hooks
 - LFS
 - tag exercises that introduce git features vs solving practical problems
-  (F vs P?), figure out if we're mixing those two
+  (F vs P?), figure out if we're mixing those two, or better, introduce git
+  features while solving practical problems
