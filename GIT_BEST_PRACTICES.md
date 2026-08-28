@@ -30,9 +30,11 @@
   contributor to set `core.autocrlf` correctly themselves — the attribute
   travels with the repo, the config setting doesn't.
 - A good baseline:
-  ```
+
+  ```gitignore
   * text=auto
   ```
+
   This lets Git auto-detect text vs. binary files and normalizes line
   endings to LF in the repository, regardless of what each contributor's
   local `core.autocrlf` is set to.
@@ -55,5 +57,3 @@
 
 - The reflog (`git reflog`) keeps a record of where branch tips have been,
   even after a reset or rebase — most "lost" commits are recoverable from it.
-- Never assume `git push --force` is safe on a shared branch without
-  checking who else might have pushed since your last fetch.
