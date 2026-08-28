@@ -57,11 +57,20 @@ voordat je oefeningen toevoegt of aanpast.
   maar zodra een deel interactief is, wordt dát deel een **eigen script** (dus
   bij interactive rebase: één script per deel). Zet nooit een tweede `rebase -i`
   achter de eerste in hetzelfde script.
+- **Volgorde van concepten:** een oefening mag alleen git-concepten gebruiken
+  (ook impliciet, om iets op te lossen) die al in een eerdere, lager genummerde
+  oefening zijn geïntroduceerd - dit geldt zowel voor de basisoefening als de
+  Plus. Kijk in `README.md` welke oefening welk onderwerp introduceert. Kom je
+  tijdens het schrijven een oefening tegen die alleen op te lossen is met een
+  concept dat pas later aan bod komt (bijv. `reset` of `rebase` gebruiken vóór
+  die oefeningen), meld dat dan expliciet aan de gebruiker in plaats van het
+  stilzwijgend op te lossen of te negeren.
 - Verwijs naar [`../GIT_BEST_PRACTICES.md`](../GIT_BEST_PRACTICES.md) waar relevant.
 - Houd de markdown lint-schoon (witregels rond koppen en lijsten).
 
 ## Nog te doen
 
-- Oefeningen 003–009 afmaken in dezelfde stijl als 001 en 002 (per onderwerp uit
-  de root-README: reflog, mergen, rebase, reset, force push, amend+force push,
-  regeleindes). Zet nieuwe oefeningen ook in de juiste sectie van `README.md`.
+- Oefeningen 004–009 afmaken in dezelfde stijl als 001, 002 en 003 (per
+  onderwerp uit de root-README: mergen, rebase, reset, force push,
+  amend+force push, regeleindes). Zet nieuwe oefeningen ook in de juiste
+  sectie van `README.md`.

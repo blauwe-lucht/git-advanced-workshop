@@ -102,5 +102,9 @@ whether run on Linux, macOS, or Windows Git Bash.
 
 ## TODO
 
+- switch --detach
+- revert
+- restore
+- cherrypick
 - git hooks
 - LFS
