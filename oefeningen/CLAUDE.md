@@ -48,8 +48,8 @@ voordat je oefeningen toevoegt of aanpast.
     script vanaf `template.sh`, staat op zichzelf): noem ze **Oefening P1 /
     P2 / P3** (soms P4), niet oplopend in moeilijkheid t.o.v. elkaar per se.
     Zet er een zin bij dat het losstaande oefeningen zijn, geen opvolgende
-    delen. Zie `012-interactive-rebase-typefout-repareren.md` en
-    `021-submodule.md` als voorbeeld.
+    delen. Zie `013-interactive-rebase-typefout-repareren.md` en
+    `022-submodule.md` als voorbeeld.
 - **Interactie-regel:** een script mag geen meerdere interactieve stappen
   vereisen. Als er interactie is (bijv. `git rebase -i`), staat die aan het
   **eind** van het script, hooguit gevolgd door een statuscommando (`git log`,
@@ -70,7 +70,7 @@ voordat je oefeningen toevoegt of aanpast.
 
 ## Nog te doen
 
-- Oefeningen 005, 008, 009, 010 en 011 afmaken in dezelfde stijl als de
+- Oefeningen 006, 009, 010, 011 en 012 afmaken in dezelfde stijl als de
   bestaande oefeningen (per onderwerp uit de root-README: mergen, reset,
   force push, amend+force push, regeleindes - rebase en reflog/tijdreizen
   zijn al gedaan). Zet nieuwe oefeningen ook in de juiste sectie van

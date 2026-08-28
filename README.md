@@ -12,6 +12,7 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `time-travel.sh` | `git switch --detach` to look around an older commit, then switching back to `main` untouched |
 | `time-travel-branch-from-older-commit.sh` | Starting a hotfix branch from an older commit instead of the tip of `main`, by detaching there first and turning it into a real branch with `git switch -c` |
 | `time-travel-back-and-forth.sh` | Jumping between several old commits with `git switch --detach main~N` — each jump has to be relative to `main`, since `HEAD~N` breaks the moment you're already detached elsewhere |
+| `time-travel-branch-from-branch-commit.sh` | Starting a second, independent hotfix branch from the middle of an existing `hotfix` branch (its second commit), leaving `hotfix`'s later commit out |
 
 ## Amend
 

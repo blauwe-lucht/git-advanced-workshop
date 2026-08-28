@@ -1,4 +1,4 @@
-# Oefening 015 — Een commit echt weggooien met `drop`
+# Oefening 016 — Een commit echt weggooien met `drop`
 
 ## Doel
 
@@ -69,7 +69,7 @@ Schrijf een apart script `interactive-rebase-drop-en-edit.sh`.
 
 - **Doel:** de historie bevat zowel een commit die je volledig wilt droppen
   als, los daarvan, een oudere commit die een overbodig bestand bevat dat je
-  eruit wilt halen (zoals in oefening 014). Doe beide reparaties in één
+  eruit wilt halen (zoals in oefening 015). Doe beide reparaties in één
   interactive rebase.
 - **Klaar wanneer:** de gedropte commit en zijn wijziging zijn nergens meer
   te vinden, de andere commit bevat het overbodige bestand niet meer maar
