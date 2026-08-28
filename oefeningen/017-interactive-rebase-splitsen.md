@@ -1,4 +1,4 @@
-# Oefening 016 — Eén commit opsplitsen in twee
+# Oefening 017 — Eén commit opsplitsen in twee
 
 ## Doel
 

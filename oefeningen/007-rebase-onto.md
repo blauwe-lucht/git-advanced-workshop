@@ -1,4 +1,4 @@
-# Oefening 006 — Commits verplaatsen met `git rebase --onto`
+# Oefening 007 — Commits verplaatsen met `git rebase --onto`
 
 ## Doel
 

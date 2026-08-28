@@ -1,4 +1,4 @@
-# Oefening 005 — Rebase: een branch bijwerken op `main`
+# Oefening 006 — Rebase: een branch bijwerken op `main`
 
 ## Doel
 

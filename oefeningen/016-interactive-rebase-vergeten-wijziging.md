@@ -1,4 +1,4 @@
-# Oefening 015 — Een vergeten wijziging in de juiste commit krijgen
+# Oefening 016 — Een vergeten wijziging in de juiste commit krijgen
 
 ## Doel
 
