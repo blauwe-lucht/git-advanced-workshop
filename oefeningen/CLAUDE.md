@@ -38,8 +38,18 @@ voordat je oefeningen toevoegt of aanpast.
 - **Plus-oefening:** lastig maar niet superlastig. **Geef geen hints over de
   benodigde git-commando's** — cursisten zoeken die zelf uit. Beschrijf alleen
   het doel en een "klaar wanneer"-check.
-- Deel de Plus altijd op in **Deel A / B / C** (soms D), oplopend in
-  moeilijkheid, zodat elk afgerond deel al een succesje is.
+- Deel de Plus altijd op in meerdere delen, zodat elk afgerond deel al een
+  succesje is. Er zijn twee vormen, kies op basis van of de delen op elkaar
+  voortbouwen:
+  - **Opvolgende delen** (deel B bouwt voort op de staat na deel A, één
+    doorlopend of uitbreidend script): noem ze **Deel A / B / C** (soms D),
+    oplopend in moeilijkheid.
+  - **Losstaande oefeningen** (elk deel is een eigen scenario met een eigen
+    script vanaf `template.sh`, staat op zichzelf): noem ze **Oefening P1 /
+    P2 / P3** (soms P4), niet oplopend in moeilijkheid t.o.v. elkaar per se.
+    Zet er een zin bij dat het losstaande oefeningen zijn, geen opvolgende
+    delen. Zie `011-interactive-rebase-typefout-repareren.md` en
+    `020-submodule.md` als voorbeeld.
 - **Interactie-regel:** een script mag geen meerdere interactieve stappen
   vereisen. Als er interactie is (bijv. `git rebase -i`), staat die aan het
   **eind** van het script, hooguit gevolgd door een statuscommando (`git log`,

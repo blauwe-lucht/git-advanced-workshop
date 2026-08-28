@@ -58,11 +58,12 @@ print `bash app.sh` bij alice zowel "Hello" als "Bye", en na stap 8 print
 `bash app.sh` ook bij bob beide regels en bevat zijn `libs/shared-lib` dezelfde
 commit als alices submodule-pointer uit stap 7.
 
-## Plus-oefening - meer met submodules
+## Plus-oefeningen - meer met submodules
 
-Elk deel is een **eigen script** dat je vanaf `template.sh` schrijft.
+Dit zijn losstaande oefeningen, geen opvolgende delen. Elke oefening is een
+**eigen script** dat je vanaf `template.sh` schrijft.
 
-### Deel A - in één keer meenemen
+### Oefening P1 - in één keer meenemen
 
 Schrijf een apart script `submodule-recursief-clonen.sh`.
 
@@ -72,7 +73,7 @@ Schrijf een apart script `submodule-recursief-clonen.sh`.
 - **Klaar wanneer:** direct na het clonen staat de inhoud van de submodule al
   in de working tree, zonder dat daarvoor een los `update`-commando nodig was.
 
-### Deel B - de submodule een branch laten volgen
+### Oefening P2 - de submodule een branch laten volgen
 
 Schrijf een apart script `submodule-branch-volgen.sh`.
 
@@ -84,7 +85,7 @@ Schrijf een apart script `submodule-branch-volgen.sh`.
   haalt een update van de submodule in `app` die wijziging op zonder dat je
   een commit-hash hoeft op te zoeken of op te geven.
 
-### Deel C - een submodule weer verwijderen
+### Oefening P3 - een submodule weer verwijderen
 
 Schrijf een apart script `submodule-verwijderen.sh`.
 
@@ -94,7 +95,7 @@ Schrijf een apart script `submodule-verwijderen.sh`.
   configuratie van de submodule meer in `.git/config` of `.gitmodules`, en
   `git status` toont geen resten meer die op de submodule wijzen.
 
-### Deel D - twee bijgewerkte pointers die botsen
+### Oefening P4 - twee bijgewerkte pointers die botsen
 
 Schrijf een apart script `submodule-conflict.sh`.
 
@@ -106,3 +107,18 @@ Schrijf een apart script `submodule-conflict.sh`.
 - **Klaar wanneer:** het conflict is opgelost, en de submodule-pointer in
   `app` wijst na afloop naar een commit van `shared-lib` waarin zowel alices
   als bobs wijziging aanwezig is.
+
+### Oefening P5 - een submodule binnen een submodule
+
+Schrijf een apart script `submodule-genest.sh`. Je gaat een submodule maken
+die zelf ook weer een submodule gebruikt.
+
+- **Doel:** `shared-lib` heeft op zijn beurt ook weer een eigen submodule
+  nodig (bijvoorbeeld een repo `util`) - een submodule binnen een submodule
+  dus. Bouw dat geneste geheel op, en zorg dat een collega die `app` clonet
+  met één toereikende actie meteen ook de inhoud van die geneste submodule
+  binnenkrijgt, niet alleen die van `shared-lib` zelf.
+- **Klaar wanneer:** na het clonen en initialiseren van `app` staat niet
+  alleen de inhoud van `libs/shared-lib` in de working tree, maar ook de
+  inhoud van de submodule daarbinnen, zonder dat je die geneste submodule
+  apart hoeft te clonen of initialiseren.
