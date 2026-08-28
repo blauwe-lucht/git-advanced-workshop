@@ -9,33 +9,41 @@ cd repos
 
 git init
 
-echo "##### build up a small history on main #####" > /dev/null
-echo "version 1" > file.txt
-git add file.txt
-git commit -m "commit 1"
+echo "##### commit 1 - greet.sh works #####" > /dev/null
+cat > greet.sh << 'EOF'
+#!/bin/bash
+echo "Hello, $1!"
+EOF
+git add greet.sh
+git commit -m "v1"
 
-echo "version 2" > file.txt
-git add file.txt
-git commit -m "commit 2"
+echo "##### commit 2 - a subtle bug #####" > /dev/null
+cat > greet.sh << 'EOF'
+#!/bin/bash
+ehco "Hello, $1!"
+EOF
+git add greet.sh
+git commit -m "v2"
 
-echo "version 3" > file.txt
-git add file.txt
-git commit -m "commit 3"
-
-echo "version 4" > file.txt
-git add file.txt
-git commit -m "commit 4"
+echo "##### commit 3 - bug fixed again #####" > /dev/null
+cat > greet.sh << 'EOF'
+#!/bin/bash
+echo "Hello, $1!"
+EOF
+git add greet.sh
+git commit -m "v3"
 
 git log --oneline
 
-echo "##### time travel two commits back - HEAD detaches from main #####" > /dev/null
-git switch --detach HEAD~2
+echo "##### a client says the script v2 is not working - verify #####" > /dev/null
 
+echo "##### check commit 2 #####" > /dev/null
+git switch --detach HEAD~1
 git status
-cat file.txt
+git log --oneline
+bash greet.sh Alice || true
 
 echo "##### switch back - main has not moved at all #####" > /dev/null
 git switch main
 
 git log --oneline
-cat file.txt

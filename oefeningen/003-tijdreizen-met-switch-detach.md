@@ -2,23 +2,30 @@
 
 ## Doel
 
-Je leert veilig terugreizen naar een oudere commit met `git switch --detach`,
-zonder dat dit een branch beïnvloedt, en hoe je daar weer veilig vandaan komt.
+Je leert `git switch --detach` gebruiken om uit te zoeken of een oudere versie
+van je code daadwerkelijk werkte - niet door de inhoud te bekijken, maar door
+hem echt te draaien - en hoe je daar weer veilig vandaan komt.
 
 ## Basisoefening
 
 Schrijf vanaf `template.sh` een script `time-travel.sh` (een gewone repo in
 `repos/` volstaat, een remote heb je niet nodig).
 
-1. Maak op `main` een reeks van drie commits, elk met een duidelijk zichtbare
-   wijziging in hetzelfde bestand (bijvoorbeeld oplopende versienummers).
-   Bekijk met `git log --oneline` de huidige commit historie.
-2. Reis terug met `git switch --detach HEAD~2` naar de commit van twee stappen
-   terug.
-3. Bekijk met `git status` dat Git waarschuwt dat je "HEAD detached" bent, en
+1. Schrijf een bash-script `greet.sh` dat bij het draaien met `bash greet.sh
+   Alice` de tekst "Hello, Alice!" print. Commit dit (commit 1: v1).
+2. Wijzig `greet.sh` met een subtiele bug, zodat `bash greet.sh Alice` niet
+   meer werkt - het script geeft een error. Blijkbaar
+   is het zonder te testen bij een klant beland.
+   Commit dit (commit 2: v2).
+3. Herstel de bug weer en commit (commit 3: v3).
+4. Een klant belt: "jullie script v2 werkt niet meer".
+5. Reis met `git switch --detach`
+   terug naar commit 2 en draai `bash greet.sh Alice` om te controleren of
+   het toen werkte.
+6. Bekijk met `git status` dat Git waarschuwt dat je "HEAD detached" bent, en
    bekijk de inhoud van het bestand om te zien dat je echt op dat oudere punt
    in de geschiedenis zit.
-4. Ga terug naar `main` (`git switch main`) en bevestig met `git log
+7. Ga terug naar `main` (`git switch main`) en bevestig met `git log
    --oneline` dat `main` weer steeds naar exact dezelfde commit wijst als in
    stap 2.
 
