@@ -1,4 +1,4 @@
-# Oefening 005 — Redden met de reflog
+# Oefening 006 — Redden met de reflog
 
 ## Doel
 

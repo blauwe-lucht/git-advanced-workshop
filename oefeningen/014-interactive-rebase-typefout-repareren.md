@@ -1,4 +1,4 @@
-# Oefening 013 — Een typefout in een oudere commit repareren
+# Oefening 014 — Een typefout in een oudere commit repareren
 
 ## Doel
 

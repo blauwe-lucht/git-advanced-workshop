@@ -1,4 +1,4 @@
-# Oefening 019 - Een vergeten bestand alsnog in de juiste commit krijgen
+# Oefening 020 - Een vergeten bestand alsnog in de juiste commit krijgen
 
 ## Doel
 
@@ -6,7 +6,7 @@ Je maakt een commit die een nieuw bestand hoort toe te voegen, maar vergeet
 het te `git add`en voordat je commit. Pas later, na nog een volgende
 commit, valt het je op: het bestand staat nog steeds als untracked in je
 working directory. Je leert het alsnog in de juiste, oudere commit te krijgen
-met dezelfde `edit`-aanpak als oefening 015.
+met dezelfde `edit`-aanpak als oefening 016.
 
 ## Basisoefening
 

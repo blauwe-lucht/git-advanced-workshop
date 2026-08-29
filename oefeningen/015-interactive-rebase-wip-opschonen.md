@@ -1,4 +1,4 @@
-# Oefening 014 — WIP-commits opschonen met interactive rebase
+# Oefening 015 — WIP-commits opschonen met interactive rebase
 
 ## Doel
 

@@ -1,4 +1,4 @@
-# Oefening 003 — Tijdreizen met `git switch --detach`
+# Oefening 004 — Tijdreizen met `git switch --detach`
 
 ## Doel
 

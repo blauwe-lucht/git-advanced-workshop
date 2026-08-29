@@ -23,6 +23,13 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `amend-accidentally-added-file.sh` | Remove a file that was accidentally included in the commit |
 | `amend-commit-before-last.sh` | Fix a typo in the commit before the last commit using `git rebase -i` - the exact steps are commented in the script |
 
+## Revert
+
+| Script | What it shows |
+| --- | --- |
+| `revert.sh` | A mistake lands in commit 2, but commit 3 already landed on top so `--amend` can't reach it anymore; `git revert` undoes just commit 2 with a new commit, leaving commit 3 untouched |
+| `revert-the-revert.sh` | The reverted change turns out to be needed after all - reverting the revert commit itself brings it back; Git labels this one "Reapply" instead of "Revert" |
+
 ## Reflog
 
 | Script | What it shows |
@@ -106,7 +113,7 @@ whether run on Linux, macOS, or Windows Git Bash.
 
 ## TODO
 
-- revert
+- ~-notation
 - restore
 - cherrypick
 - git hooks
