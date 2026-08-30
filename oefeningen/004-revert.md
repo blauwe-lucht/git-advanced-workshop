@@ -1,4 +1,4 @@
-# Oefening 003 — Een eerdere commit terugdraaien met `git revert`
+# Oefening 004 — Een eerdere commit terugdraaien met `git revert`
 
 ## Doel
 

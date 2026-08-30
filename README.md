@@ -14,6 +14,13 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `time-travel-back-and-forth.sh` | Jumping between several old commits with `git switch --detach main~N` — each jump has to be relative to `main`, since `HEAD~N` breaks the moment you're already detached elsewhere |
 | `time-travel-branch-from-branch-commit.sh` | Starting a second, independent hotfix branch from the middle of an existing `hotfix` branch (its second commit), leaving `hotfix`'s later commit out |
 
+## Looking back
+
+| Script | What it shows |
+| --- | --- |
+| `look-back.sh` | Use ~-notation to look at earlier commits and commits on other branches without needing to copy a commit hash or switch branches |
+| `look-back-plus.sh` | `main` splits off early (1 commit of its own), then `feature-a` splits off further along a shared line (3 commits from its tip), then `feature-b` continues that same line further still (5 commits from its tip); the shared split point is reachable four different ways - `main~1`, `feature-a~3`, `feature-b~5`, and `main^` - all resolving to the exact same commit |
+
 ## Amend
 
 | Script | What it shows |
@@ -113,7 +120,6 @@ whether run on Linux, macOS, or Windows Git Bash.
 
 ## TODO
 
-- ~-notation
 - restore
 - cherrypick
 - git hooks

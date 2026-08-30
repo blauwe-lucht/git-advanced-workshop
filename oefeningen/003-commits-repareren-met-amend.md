@@ -1,4 +1,4 @@
-# Oefening 002 — Commits repareren met `--amend`
+# Oefening 003 — Commits repareren met `--amend`
 
 ## Doel
 

@@ -1,4 +1,4 @@
-# Oefening 005 — Branchen vanaf een oudere commit voor een hotfix
+# Oefening 006 — Branchen vanaf een oudere commit voor een hotfix
 
 ## Doel
 

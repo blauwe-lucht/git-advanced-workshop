@@ -1,4 +1,4 @@
-# Oefening 022 - Werk onderbreken met `git worktree`
+# Oefening 023 - Werk onderbreken met `git worktree`
 
 ## Doel
 

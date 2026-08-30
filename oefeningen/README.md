@@ -20,66 +20,70 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 
 - [001 - Committen en samenwerken via branches](001-committen-en-samenwerken.md)
 
+### Terugkijken
+
+- [002 - Terugkijken met de `~`-notatie](002-terugkijken-met-tilde-notatie.md)
+
 ### Amend
 
-- [002 - Commits repareren met `--amend`](002-commits-repareren-met-amend.md)
+- [003 - Commits repareren met `--amend`](003-commits-repareren-met-amend.md)
 
 ### Revert
 
-- [003 - Een eerder commit terugdraaien met `git revert`](003-revert.md)
+- [004 - Een eerdere commit terugdraaien met `git revert`](004-revert.md)
 
 ### Tijdreizen
 
-- [004 - Tijdreizen met `git switch --detach`](004-tijdreizen-met-switch-detach.md)
-- [005 - Branchen vanaf een oudere commit voor een hotfix](005-branchen-vanaf-oudere-commit.md)
+- [005 - Tijdreizen met `git switch --detach`](005-tijdreizen-met-switch-detach.md)
+- [006 - Branchen vanaf een oudere commit voor een hotfix](006-branchen-vanaf-oudere-commit.md)
 
 ### Reflog
 
-- [006 - Redden met de reflog](006-redden-met-de-reflog.md)
+- [007 - Redden met de reflog](007-redden-met-de-reflog.md)
 
 ### Mergen
 
-- [007 - Merge-strategieën & conflicten](007-merge-strategieen-en-conflicten.md)
+- [008 - Merge-strategieën & conflicten](008-merge-strategieen-en-conflicten.md)
 
 ### Rebase
 
-- [008 - Rebase: een branch bijwerken op `main`](008-rebase-branch-bijwerken.md)
-- [009 - Commits verplaatsen met `git rebase --onto`](009-rebase-onto.md)
+- [009 - Rebase: een branch bijwerken op `main`](009-rebase-branch-bijwerken.md)
+- [010 - Commits verplaatsen met `git rebase --onto`](010-rebase-onto.md)
 
 ### Reset
 
-- [010 - `reset --soft`, `--mixed` en `--hard`](010-reset-soft-mixed-hard.md)
+- [011 - `reset --soft`, `--mixed` en `--hard`](011-reset-soft-mixed-hard.md)
 
 ### Force push veilig
 
-- [011 - Veilig force-pushen met `--force-with-lease`](011-veilig-force-pushen.md)
+- [012 - Veilig force-pushen met `--force-with-lease`](012-veilig-force-pushen.md)
 
 ### Amend & force push
 
-- [012 - Amend + force push in een team](012-amend-en-force-push-in-een-team.md)
+- [013 - Amend + force push in een team](013-amend-en-force-push-in-een-team.md)
 
 ### Regeleindes (CRLF/LF)
 
-- [013 - Regeleindes en `.gitattributes`](013-regeleindes-en-gitattributes.md)
+- [014 - Regeleindes en `.gitattributes`](014-regeleindes-en-gitattributes.md)
 
 ### Interactive rebase
 
-- [014 - Een typefout in een oudere commit repareren](014-interactive-rebase-typefout-repareren.md)
-- [015 - WIP-commits opschonen met interactive rebase](015-interactive-rebase-wip-opschonen.md)
-- [016 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](016-interactive-rebase-edit-bestand-verwijderen.md)
-- [017 - Een commit echt weggooien met `drop`](017-interactive-rebase-drop.md)
-- [018 - Een vergeten wijziging in de juiste commit krijgen](018-interactive-rebase-vergeten-wijziging.md)
-- [019 - Eén commit opsplitsen in twee](019-interactive-rebase-splitsen.md)
-- [020 - Een vergeten bestand alsnog in de juiste commit krijgen](020-interactive-rebase-vergeten-bestand.md)
+- [015 - Een typefout in een oudere commit repareren](015-interactive-rebase-typefout-repareren.md)
+- [016 - WIP-commits opschonen met interactive rebase](016-interactive-rebase-wip-opschonen.md)
+- [017 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](017-interactive-rebase-edit-bestand-verwijderen.md)
+- [018 - Een commit echt weggooien met `drop`](018-interactive-rebase-drop.md)
+- [019 - Een vergeten wijziging in de juiste commit krijgen](019-interactive-rebase-vergeten-wijziging.md)
+- [020 - Eén commit opsplitsen in twee](020-interactive-rebase-splitsen.md)
+- [021 - Een vergeten bestand alsnog in de juiste commit krijgen](021-interactive-rebase-vergeten-bestand.md)
 
 ### Stash
 
-- [021 - Werk opzijzetten met `git stash`](021-stash.md)
+- [022 - Werk opzijzetten met `git stash`](022-stash.md)
 
 ### Worktree
 
-- [022 - Werk onderbreken met `git worktree`](022-worktree.md)
+- [023 - Werk onderbreken met `git worktree`](023-worktree.md)
 
 ### Submodules
 
-- [023 - Een link naar een andere repo opnemen met `git submodule`](023-submodule.md)
+- [024 - Een link naar een andere repo opnemen met `git submodule`](024-submodule.md)
