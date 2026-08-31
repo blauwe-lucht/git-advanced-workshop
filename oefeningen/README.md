@@ -1,9 +1,8 @@
 # Git Advanced Workshop - Oefeningen
 
 Welkom! Hier vind je de hands-on oefeningen. Elke oefening bestaat uit een
-**basisoefening** die iedereen binnen de tijd afkrijgt, en een **Plus-oefening**
-voor als je snel klaar bent en je tanden ergens op wilt stukbijten. De Plus is
-opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
+**basisoefening** die één of meerdere concepten uitleg en één
+of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 ## Zo werk je
 
@@ -12,7 +11,7 @@ opgedeeld in delen, dus ook een half afgemaakte Plus levert al een succesje op.
 2. Lees de oefening en bouw het scenario stap voor stap op in je script. Je werkt
    altijd in de verse `repos/`-map die het script zelf aanmaakt.
 3. Draai je script (`bash mijn-script.sh`) en controleer de "klaar wanneer"-check.
-4. Tijd over? Doe de Plus-oefening: Deel A → B → C.
+4. Wil je meer oefenen? Doe de Plus-oefening(en).
 
 ## Oefeningen
 
