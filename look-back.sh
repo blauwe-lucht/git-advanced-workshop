@@ -35,6 +35,9 @@ git show HEAD~1
 echo "##### look two commits back #####" > /dev/null
 git show HEAD~2
 
+echo "##### rev-parse gives you just the hash, no diff #####" > /dev/null
+git rev-parse HEAD~1
+
 echo "##### branch off and add a commit that isn't on main #####" > /dev/null
 git switch -c feature
 echo "line 4" >> notes.txt
@@ -49,3 +52,7 @@ git show main
 
 echo "##### and one commit before that, still without switching #####" > /dev/null
 git show main~1
+
+echo "##### two different expressions, same commit - prove it with rev-parse #####" > /dev/null
+git rev-parse HEAD~2
+git rev-parse main~1

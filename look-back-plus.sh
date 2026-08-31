@@ -65,12 +65,12 @@ git commit -am "feature-b commit 3"
 
 git log --oneline --graph --all
 
-echo "##### three different ways to point at the same commit (commit 2) #####" > /dev/null
-git show main~1
-git show feature-a~3
-git show feature-b~5
+echo "##### three different ways to point at the same commit (commit 2) - prove it with rev-parse #####" > /dev/null
+git rev-parse main~1
+git rev-parse feature-a~3
+git rev-parse feature-b~5
 
 echo "##### a fourth way #####" > /dev/null
-# We're on branch main, so HEAD~1 also points to the second commit.
+# We're on branch feature-b, so HEAD~5 also points to the second commit.
 # On other branches the number changes accordingly.
-git show HEAD~1
+git rev-parse HEAD~5

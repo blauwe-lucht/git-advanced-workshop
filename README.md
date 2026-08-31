@@ -124,6 +124,4 @@ whether run on Linux, macOS, or Windows Git Bash.
 - cherrypick
 - git hooks
 - LFS
-- tag exercises that introduce git features vs solving practical problems
-  (F vs P?), figure out if we're mixing those two, or better, introduce git
-  features while solving practical problems
+- make sure topics are introduced while solving practical problems
