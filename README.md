@@ -52,15 +52,6 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `merge-squash.sh` | Squash all feature commits into a single commit on main |
 | `merge-conflict.sh` | What a merge conflict looks like and the conflict markers Git leaves behind |
 
-## Rebase
-
-| Script | What it shows |
-| --- | --- |
-| `rebase.sh` | Graph before and after a rebase, plus the reflog to show the original commits were replaced |
-| `merge-rebase.sh` | Rebase feature onto main, then fast-forward — linear history, individual commits preserved |
-| `emulate-squash.sh` | Emulate a squash using `git reset --soft` — same result, different mechanism |
-| `interactive-rebase.sh` | Sets up WIP commits then hands off to the student to squash them with `git rebase -i` |
-
 ## Reset
 
 | Script | What it shows |
@@ -69,6 +60,15 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `reset-mixed.sh` | Moves the branch pointer back, changes dropped to working tree |
 | `reset-hard.sh` | Moves the branch pointer back, changes are gone |
 | `reset-undo-amend.sh` | Uses the reflog and `HEAD@{1}` to undo an amend |
+
+## Rebase
+
+| Script | What it shows |
+| --- | --- |
+| `rebase.sh` | Graph before and after a rebase, plus the reflog to show the original commits were replaced |
+| `merge-rebase.sh` | Rebase feature onto main, then fast-forward — linear history, individual commits preserved |
+| `emulate-squash.sh` | Emulate a squash using `git reset --soft` — same result, different mechanism |
+| `interactive-rebase.sh` | Sets up WIP commits then hands off to the student to squash them with `git rebase -i` |
 
 ## Force push safety
 
@@ -125,3 +125,10 @@ whether run on Linux, macOS, or Windows Git Bash.
 - git hooks
 - LFS
 - make sure topics are introduced while solving practical problems
+- write these oefeningen, already referenced from `oefeningen/README.md` but
+  not created yet:
+  - `oefeningen/008-merge-strategieen-en-conflicten.md`
+  - `oefeningen/009-reset-soft-mixed-hard.md`
+  - `oefeningen/012-veilig-force-pushen.md`
+  - `oefeningen/013-amend-en-force-push-in-een-team.md`
+  - `oefeningen/014-regeleindes-en-gitattributes.md`

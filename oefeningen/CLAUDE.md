@@ -70,7 +70,7 @@ voordat je oefeningen toevoegt of aanpast.
 
 ## Nog te doen
 
-- Oefeningen 008, 011, 012, 013 en 014 afmaken in dezelfde stijl als de
+- Oefeningen 008, 009, 012, 013 en 014 afmaken in dezelfde stijl als de
   bestaande oefeningen (per onderwerp uit de root-README: mergen, reset,
   force push, amend+force push, regeleindes - rebase, revert, ~-notatie en
   reflog/tijdreizen

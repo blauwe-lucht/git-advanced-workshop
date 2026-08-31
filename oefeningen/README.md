@@ -44,14 +44,14 @@ of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 - [008 - Merge-strategieën & conflicten](008-merge-strategieen-en-conflicten.md)
 
-### Rebase
-
-- [009 - Rebase: een branch bijwerken op `main`](009-rebase-branch-bijwerken.md)
-- [010 - Commits verplaatsen met `git rebase --onto`](010-rebase-onto.md)
-
 ### Reset
 
-- [011 - `reset --soft`, `--mixed` en `--hard`](011-reset-soft-mixed-hard.md)
+- [009 - `reset --soft`, `--mixed` en `--hard`](009-reset-soft-mixed-hard.md)
+
+### Rebase
+
+- [010 - Rebase: een branch bijwerken op `main`](010-rebase-branch-bijwerken.md)
+- [011 - Commits verplaatsen met `git rebase --onto`](011-rebase-onto.md)
 
 ### Force push veilig
 
