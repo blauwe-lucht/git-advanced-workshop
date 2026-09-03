@@ -42,7 +42,11 @@ git log --oneline
 echo "##### bob knows the earlier commit hashes from alice, but their objects were never fetched #####" > /dev/null
 git switch --detach HEAD~1 || true
 
-echo "##### git fetch --unshallow turns it into a full clone, after which the old commit works #####" > /dev/null
-git fetch --unshallow
-git switch --detach HEAD~1
+# to fix this, deepen the clone first: `git fetch --unshallow`, then `git switch --detach HEAD~1` and `git log --oneline` work as normal
+
+echo "##### but a shallow clone is still a real repo - an uncommitted change resets completely just fine #####" > /dev/null
+echo "scratch edit" >> file.txt
+git status
+git reset --hard HEAD
+git status
 git log --oneline
