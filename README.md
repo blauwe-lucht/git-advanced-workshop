@@ -14,6 +14,12 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `time-travel-back-and-forth.sh` | Jumping between several old commits with `git switch --detach main~N` — each jump has to be relative to `main`, since `HEAD~N` breaks the moment you're already detached elsewhere |
 | `time-travel-branch-from-branch-commit.sh` | Starting a second, independent hotfix branch from the middle of an existing `hotfix` branch (its second commit), leaving `hotfix`'s later commit out |
 
+## Shallow clones
+
+| Script | What it shows |
+| --- | --- |
+| `shallow-clone.sh` | `git clone --depth 1` gives you a working `git log`, but only for the commit(s) it actually fetched; `git switch --detach` to an older commit fails with "invalid reference" since that object was never downloaded - `git fetch --unshallow` fixes it |
+
 ## Looking back
 
 | Script | What it shows |
@@ -120,6 +126,7 @@ whether run on Linux, macOS, or Windows Git Bash.
 
 ## TODO
 
+- tags
 - restore
 - cherrypick
 - git hooks
