@@ -1,4 +1,4 @@
-# Oefening 015 — Een typefout in een oudere commit repareren
+# Oefening 016 — Een typefout in een oudere commit repareren
 
 ## Doel
 
