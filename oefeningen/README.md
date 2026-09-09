@@ -42,51 +42,67 @@ of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 ### Mergen
 
-- [008 - Merge-strategieën & conflicten](008-merge-strategieen-en-conflicten.md)
+- [008 - Mergen naar een branch met nieuwere commits](008-merge-diverged.md)
+- [009 - Mergen naar een branch zonder nieuwere commits (fast-forward)](009-merge-fast-forward.md)
+- [010 - Een merge-commit afdwingen met `--no-ff`](010-merge-no-ff.md)
+- [011 - Opschonen met squash merge](011-merge-squash.md)
+- [012 - Een merge afbreken met `git merge --abort`](012-merge-abort.md)
+- [013 - Een merge met conflicten oplossen met `-X ours`/`-X theirs`](013-merge-ours-theirs.md)
+- [014 - Twee losse histories samenvoegen](014-merge-unrelated-histories.md)
 
 ### Reset
 
-- [009 - `reset --soft`, `--mixed` en `--hard`](009-reset-soft-mixed-hard.md)
+- [015 - `reset --soft`, `--mixed` en `--hard`](015-reset-soft-mixed-hard.md)
 
 ### Cherry-pick
 
-- [010 - Een losse commit overzetten met `git cherry-pick`](010-cherrypick.md)
+- [016 - Een losse commit overzetten met `git cherry-pick`](016-cherrypick.md)
 
 ### Rebase
 
-- [011 - Rebase: een branch bijwerken op `main`](011-rebase-branch-bijwerken.md)
-- [012 - Commits verplaatsen met `git rebase --onto`](012-rebase-onto.md)
+- [017 - Rebase: een branch bijwerken op `main`](017-rebase-branch-bijwerken.md)
+- [018 - Commits verplaatsen met `git rebase --onto`](018-rebase-onto.md)
 
 ### Force push veilig
 
-- [013 - Veilig force-pushen met `--force-with-lease`](013-veilig-force-pushen.md)
+- [019 - Veilig force-pushen met `--force-with-lease`](019-veilig-force-pushen.md)
 
 ### Amend & force push
 
-- [014 - Amend + force push in een team](014-amend-en-force-push-in-een-team.md)
+- [020 - Amend + force push in een team](020-amend-en-force-push-in-een-team.md)
 
 ### Regeleindes (CRLF/LF)
 
-- [015 - Regeleindes en `.gitattributes`](015-regeleindes-en-gitattributes.md)
+- [021 - Regeleindes en `.gitattributes`](021-regeleindes-en-gitattributes.md)
 
 ### Interactive rebase
 
-- [016 - Een typefout in een oudere commit repareren](016-interactive-rebase-typefout-repareren.md)
-- [017 - WIP-commits opschonen met interactive rebase](017-interactive-rebase-wip-opschonen.md)
-- [018 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](018-interactive-rebase-edit-bestand-verwijderen.md)
-- [019 - Een commit echt weggooien met `drop`](019-interactive-rebase-drop.md)
-- [020 - Een vergeten wijziging in de juiste commit krijgen](020-interactive-rebase-vergeten-wijziging.md)
-- [021 - Eén commit opsplitsen in twee](021-interactive-rebase-splitsen.md)
-- [022 - Een vergeten bestand alsnog in de juiste commit krijgen](022-interactive-rebase-vergeten-bestand.md)
+- [022 - Een typefout in een oudere commit repareren](022-interactive-rebase-typefout-repareren.md)
+- [023 - WIP-commits opschonen met interactive rebase](023-interactive-rebase-wip-opschonen.md)
+- [024 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](024-interactive-rebase-edit-bestand-verwijderen.md)
+- [025 - Een commit echt weggooien met `drop`](025-interactive-rebase-drop.md)
+- [026 - Een vergeten wijziging in de juiste commit krijgen](026-interactive-rebase-vergeten-wijziging.md)
+- [027 - Eén commit opsplitsen in twee](027-interactive-rebase-splitsen.md)
+- [028 - Een vergeten bestand alsnog in de juiste commit krijgen](028-interactive-rebase-vergeten-bestand.md)
 
 ### Stash
 
-- [023 - Werk opzijzetten met `git stash`](023-stash.md)
+- [029 - Werk opzijzetten met `git stash`](029-stash.md)
 
 ### Worktree
 
-- [024 - Werk onderbreken met `git worktree`](024-worktree.md)
+- [030 - Werk onderbreken met `git worktree`](030-worktree.md)
 
 ### Submodules
 
-- [025 - Een link naar een andere repo opnemen met `git submodule`](025-submodule.md)
+- [031 - Een link naar een andere repo opnemen met `git submodule`](031-submodule.md)
+
+### Bonus: Jujutsu (jj)
+
+Je hebt nu gezien hoe lastig Git's interface kan zijn, terwijl het onderliggende
+model (commits, branches, merges) prima in elkaar zit. [Jujutsu](https://github.com/jj-vcs/jj)
+(`jj`) is een nieuwere VCS die op datzelfde Git-model werkt - je repo blijft
+gewoon een `.git`-map, compatibel met GitHub/GitLab - maar met een eenvoudigere
+en veiligere interface: geen staging area, elke actie is ongedaan te maken met
+`jj undo`, en conflicten blokkeren je werk niet meer maar worden gewoon
+meegenomen totdat je ze oplost. Deze bonusoefeningen volgen later.

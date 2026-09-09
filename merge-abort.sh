@@ -24,9 +24,12 @@ git switch main
 echo "main commit 2" > file1.txt
 git commit -am "main commit 2 - update file1.txt"
 
-git log --oneline --graph --all
-
-echo "##### both sides touched the same line - this conflicts #####" > /dev/null
+echo "##### start the merge - it conflicts #####" > /dev/null
 git merge feature || true
+git status
 
+echo "##### this is messier than expected - back out completely #####" > /dev/null
+git merge --abort
+
+git status
 cat file1.txt

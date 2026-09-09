@@ -20,7 +20,7 @@ cd ..
 echo "##### bob pulls main and starts work on a branch #####" > /dev/null
 cd bob
 git pull
-git checkout -b feature/bob
+git switch -c feature/bob
 echo "feature 1" > feature1.txt
 git add feature1.txt
 git commit -m "add feature 1"

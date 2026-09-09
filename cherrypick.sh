@@ -16,8 +16,7 @@ git commit -m "commit 1 - add run.sh"
 
 echo "##### main commit 2 - unrelated line, the typo is still there #####" > /dev/null
 echo 'echo "Second commit"' >> run.sh
-git add run.sh
-git commit -m "commit 2 - update run.sh"
+git commit -am "commit 2 - update run.sh"
 
 echo "##### the feature branch starts from commit 2 #####" > /dev/null
 git switch -c feature
@@ -25,8 +24,7 @@ git switch -c feature
 echo "##### main commit 3 - main moves on, the typo is still there #####" > /dev/null
 git switch main
 echo 'echo "Third commit"' >> run.sh
-git add run.sh
-git commit -m "commit 3 - update run.sh"
+git commit -am "commit 3 - update run.sh"
 
 echo "##### feature commit 1 #####" > /dev/null
 git switch feature
@@ -35,13 +33,11 @@ git commit -am "feature commit 1 - add line"
 
 echo "##### feature commit 2 - the typo is spotted and fixed along the way #####" > /dev/null
 sed -i 's/ehco/echo/' run.sh
-git add run.sh
-git commit -m "feature commit 2 - fix typo"
+git commit -am "feature commit 2 - fix typo"
 
 echo "##### feature commit 3 - more own work #####" > /dev/null
 echo 'echo "Third commit from branch"' >> run.sh
-git add run.sh
-git commit -m "feature commit 3 - add line"
+git commit -am "feature commit 3 - add line"
 
 git log --oneline --graph --all
 

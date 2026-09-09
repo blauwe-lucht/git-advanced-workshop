@@ -9,33 +9,34 @@ cd repos
 
 git init
 
-echo "version 1" > file1.txt
-git add file1.txt
-git commit -m "initial commit"
-
-# add a commit to main so the branches actually diverge
-echo "main work" > main.txt
+echo "##### main commit 1 #####" > /dev/null
+echo "main commit 1" > main.txt
 git add main.txt
-git commit -m "work on main"
+git commit -m "main commit 1 - add main.txt"
 
-git checkout -b feature HEAD~1
+echo "##### main commit 2 - main moves on so the branches actually diverge #####" > /dev/null
+echo "main commit 2" >> main.txt
+git commit -am "main commit 2 - update main.txt"
 
-echo "feature work" > feature.txt
+echo "##### feature branch starts from before main commit 2 #####" > /dev/null
+git switch -c feature HEAD~1
+
+echo "##### feature commit 1 #####" > /dev/null
+echo "feature commit 1" > feature.txt
 git add feature.txt
-git commit -m "add feature"
+git commit -m "feature commit 1 - add feature.txt"
 
-echo "more feature work" >> feature.txt
-git add feature.txt
-git commit -m "improve feature"
+echo "##### feature commit 2 #####" > /dev/null
+echo "feature commit 2" >> feature.txt
+git commit -am "feature commit 2 - update feature.txt"
 
 git log --oneline --graph --all
 
-# rebase replays feature commits on top of main's tip, rewriting their hashes
+echo "##### rebase replays feature's commits on top of main's tip, rewriting their hashes #####" > /dev/null
 git rebase main
 
-git checkout main
-
-# now a clean fast-forward — no merge commit, linear history
+echo "##### now a clean fast-forward - no merge commit, linear history #####" > /dev/null
+git switch main
 git merge --ff-only feature
 
 git log --oneline --graph --all

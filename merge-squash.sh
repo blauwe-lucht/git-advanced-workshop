@@ -9,28 +9,27 @@ cd repos
 
 git init
 
-echo "version 1" > file1.txt
-git add file1.txt
-git commit -m "initial commit"
+echo "##### main commit 1 #####" > /dev/null
+echo "main commit 1" > main.txt
+git add main.txt
+git commit -m "main commit 1 - add main.txt"
 
-git checkout -b feature
-
-echo "feature work" > feature.txt
+echo "##### feature commit 1 #####" > /dev/null
+git switch -c feature
+echo "feature commit 1" > feature.txt
 git add feature.txt
-git commit -m "add feature"
+git commit -m "feature commit 1 - add feature.txt"
 
-echo "more feature work" >> feature.txt
-git add feature.txt
-git commit -m "improve feature"
+echo "##### feature commit 2 #####" > /dev/null
+echo "feature commit 2" >> feature.txt
+git commit -am "feature commit 2 - update feature.txt"
 
-echo "fix typo" >> feature.txt
-git add feature.txt
-git commit -m "fix typo"
+echo "##### feature commit 3 - fix typo #####" > /dev/null
+echo "feature commit 3" >> feature.txt
+git commit -am "feature commit 3 - fix typo"
 
-git checkout main
-
-# --squash: folds all feature commits into staged changes on main
-# you then make a single clean commit — the feature branch commits don't appear in main's history
+echo "##### squash all of feature's commits into one staged change on main #####" > /dev/null
+git switch main
 git merge --squash feature
 git commit -m "add feature (squashed)"
 

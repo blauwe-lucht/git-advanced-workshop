@@ -9,23 +9,23 @@ cd repos
 
 git init
 
-echo "version 1" > file1.txt
-git add file1.txt
-git commit -m "initial commit"
+echo "##### main commit 1 #####" > /dev/null
+echo "main commit 1" > main.txt
+git add main.txt
+git commit -m "main commit 1 - add main.txt"
 
-git checkout -b feature
-
-echo "feature work" > feature.txt
+echo "##### feature commit 1 #####" > /dev/null
+git switch -c feature
+echo "feature commit 1" > feature.txt
 git add feature.txt
-git commit -m "add feature"
+git commit -m "feature commit 1 - add feature.txt"
 
-echo "more feature work" >> feature.txt
-git add feature.txt
-git commit -m "improve feature"
+echo "##### feature commit 2 #####" > /dev/null
+echo "feature commit 2" >> feature.txt
+git commit -am "feature commit 2 - update feature.txt"
 
-git checkout main
-
-# --no-ff always creates a merge commit, even when fast-forward is possible
+echo "##### main hasn't moved, but --no-ff forces a merge commit anyway #####" > /dev/null
+git switch main
 git merge --no-ff feature -m "merge feature into main"
 
 git log --oneline --graph --all

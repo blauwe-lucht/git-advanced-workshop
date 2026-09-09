@@ -11,9 +11,25 @@ dienen voor de oefeningen in [`oefeningen/`](oefeningen/CLAUDE.md).
 - **Geen `#`-commentaarregels als sectiemarkering.** Gebruik in plaats daarvan
   `echo "##### omschrijving #####" > /dev/null` vlak vóór het stukje dat het
   beschrijft. Houd het compact, gebruik maar 1 regel.
-  Met `set -x` print Git de echo-opdracht zelf (dus de omschrijving
-  is zichtbaar in de trace), terwijl `> /dev/null` voorkomt dat de tekst ook in
-  de eigenlijke scriptoutput verschijnt. Een gewone `#`-comment wordt door
-  `set -x` niet getoond en is daardoor onzichtbaar tijdens het afspelen van het
-  script. Zie [`stash.sh`](stash.sh) of [`collaborate.sh`](collaborate.sh) als
+  Zie [`stash.sh`](stash.sh) of [`collaborate.sh`](collaborate.sh) als
   voorbeeld.
+- **Herkenbare commit-inhoud en -boodschappen.** Waar het voor het scenario
+  zinvol is, laat zowel de bestandsinhoud als de commit-boodschap zien om
+  welke commit het gaat, bijvoorbeeld `main commit 1`, `feature commit 1`.
+  Zie [`cherrypick.sh`](cherrypick.sh) of [`merge-diverged.sh`](merge-diverged.sh)
+  als voorbeeld.
+- **Scripts zijn uitvoerbaar.** Zet `chmod u+x` op elk `.sh`-bestand.
+- **Gebruik `git commit -am` waar mogelijk** om `git add` en `git commit` in
+  één regel te combineren en het script compacter te houden. Dit werkt alleen
+  voor wijzigingen aan bestanden die al getrackt zijn - de eerste keer dat een
+  bestand wordt toegevoegd blijft dat gewoon `git add` gevolgd door
+  `git commit`.
+- **Alles in de demo-scripts is in het Engels** - bestandsinhoud,
+  commit-boodschappen, de `echo "##### ... #####"`-omschrijvingen, én de
+  bestandsnamen van de scripts zelf.
+- **Gebruik `git switch` in plaats van `git checkout` waar van toepassing.**
+  Voor het aanmaken/wisselen van branches (`git switch -c <branch>`,
+  `git switch <branch>`) is `switch` het modernere en duidelijkere commando.
+  `git checkout` blijft gebruikt voor wat `switch` niet dekt, zoals het
+  terugzetten van bestanden (`git checkout -- <pad>`) of andere
+  detached-HEAD/pad-specifieke scenario's.

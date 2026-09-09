@@ -16,7 +16,7 @@ git add readme.txt
 git commit -m "initial commit"
 
 echo "##### feature branch from main with its own commit #####" > /dev/null
-git checkout -b feature/new-feature
+git switch -c feature/new-feature
 
 echo "first commit on feature branch" > feature.txt
 git add feature.txt

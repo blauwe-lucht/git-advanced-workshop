@@ -24,8 +24,16 @@ echo "##### feature commit 2 #####" > /dev/null
 echo "feature commit 2" >> feature.txt
 git commit -am "feature commit 2 - update feature.txt"
 
-echo "##### main hasn't moved - this merge is a fast-forward, no merge commit #####" > /dev/null
+echo "##### main commit 2 - a colleague sneaks in a commit right before the merge #####" > /dev/null
 git switch main
-git merge feature
+echo "main commit 2" >> main.txt
+git commit -am "main commit 2 - update main.txt"
+
+echo "##### fast-forward is no longer possible - --ff-only refuses instead of silently doing something else #####" > /dev/null
+git merge --ff-only feature || true
+git status
+
+echo "##### resolve it properly with a normal merge instead #####" > /dev/null
+git merge feature -m "merge feature into main"
 
 git log --oneline --graph --all
