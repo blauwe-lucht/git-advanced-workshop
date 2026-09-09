@@ -45,7 +45,7 @@ rond de merge volledig af met een commit.
 **Klaar wanneer:** `git log --oneline --graph --all` toont een afgeronde
 merge-commit met twee ouders, en `git status` is schoon.
 
-### Deel B — proberen terug te draaien, en vastlopen
+### Deel B — proberen terug te draaien
 
 Bedenk je dat de merge er toch niet had moeten komen. Probeer de merge-commit
 op dezelfde manier ongedaan te maken als je een gewone commit zou
@@ -55,7 +55,7 @@ waarom een merge-commit iets anders nodig heeft dan een gewone commit.
 **Klaar wanneer:** je hebt de foutmelding gezien en kunt uitleggen waarom
 deze aanpak hier niet vanzelf werkt.
 
-### Deel C — de merge alsnog netjes terugdraaien
+### Deel C — de merge netjes terugdraaien
 
 Draai de merge-commit nu wel op de juiste manier terug, zonder de geschiedenis
 te herschrijven (dus geen `reset`).
