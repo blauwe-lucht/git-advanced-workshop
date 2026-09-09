@@ -2,14 +2,15 @@
 
 ## Doel
 
-Je kunt een mergeconflict met de hand oplossen. Soms wil je dat helemaal
-niet per hunk doen, maar gewoon zeggen: "bij twijfel wint deze kant"
-- voor het hele bestand, in één keer. Dat doe je met `git merge -X ours` of
-`-X theirs`.
+Je kunt een merge conflict met de hand oplossen. Soms wil je dat helemaal
+niet per conflict doen, maar gewoon zeggen: "bij twijfel wint deze kant",
+voor het hele bestand, in één keer. Dat doe je met `git merge -X ours` of
+`-X theirs`. `ours` betekent 'behoud de wijzigingen van de huidige branch',
+`theirs` betekent 'neem de wijzigingen van de inkomende branch over'.
 
 ## Basisoefening
 
-Schrijf vanaf `template.sh` een script `merge-ours-theirs.sh` (een gewone
+Schrijf vanaf `template.sh` een script `merge-ours.sh` (een gewone
 repo in `repos/` volstaat) dat het volgende doet:
 
 1. Maak op `main` een eerste commit met een instellingenbestand
@@ -28,7 +29,7 @@ niet die van `feature`.
 
 ## Plus-oefening — een bestand dat altijd zijn eigen kant moet houden
 
-Schrijf een apart script `merge-ours-theirs-gitattributes.sh` vanaf
+Schrijf een apart script `merge-ours-selective-always.sh` vanaf
 `template.sh`.
 
 - **Doel:** in plaats van bij elke merge apart aan `-X ours` te moeten
