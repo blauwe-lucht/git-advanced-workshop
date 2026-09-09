@@ -38,7 +38,7 @@ git add .gitattributes
 git commit -m "pin text files to LF via .gitattributes"
 git ls-files --eol
 
-echo "##### --renormalize re-applies attributes to everything in the index, fixing the file that predates the rule #####" > /dev/null
+echo "##### --renormalize re-applies attributes to everything in the staging area, fixing the file that predates the rule #####" > /dev/null
 git add --renormalize .
 git status
 git diff --cached --stat

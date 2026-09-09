@@ -43,7 +43,7 @@
 - Mark true binaries explicitly (`*.png binary`) so they're never touched.
 - Adding `.gitattributes` to an existing repo doesn't retroactively fix
   already-committed files — follow up with `git add --renormalize .` to
-  apply the new rules to everything already in the index.
+  apply the new rules to everything already in the staging area.
 - To check what's actually stored (independent of local checkout
   conversion), use `git ls-files --eol` rather than trusting
   `core.autocrlf=false` alone.

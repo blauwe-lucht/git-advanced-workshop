@@ -33,3 +33,8 @@ dienen voor de oefeningen in [`oefeningen/`](oefeningen/CLAUDE.md).
   `git checkout` blijft gebruikt voor wat `switch` niet dekt, zoals het
   terugzetten van bestanden (`git checkout -- <pad>`) of andere
   detached-HEAD/pad-specifieke scenario's.
+- **Gebruik de term "staging area", niet "index".** Beide betekenen hetzelfde,
+  maar "staging area" is de begrijpelijkere, gangbare term voor cursisten.
+  Letterlijke commando's/flags die toevallig "index" heten (`git stash pop
+  --index`, `git update-index`) blijven natuurlijk ongewijzigd - het gaat om
+  de term in prose (comments, `echo`-omschrijvingen).

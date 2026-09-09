@@ -33,7 +33,7 @@ git ls-files --eol windows.txt
 git push
 cd ..
 
-echo "##### bob's fresh clone has no autocrlf conversion, so index and working tree both show LF #####" > /dev/null
+echo "##### bob's fresh clone has no autocrlf conversion, so staging area and working tree both show LF #####" > /dev/null
 cd bob
 git pull
 git ls-files --eol windows.txt

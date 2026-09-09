@@ -24,6 +24,11 @@ voordat je oefeningen toevoegt of aanpast.
   bestandsnaam die de cursist voor het script moet gebruiken; leen die naam van
   het bijbehorende voorbeeldscript in de root als die logisch is, kies anders een
   duidelijke eigen naam.
+- **Scriptnamen zijn altijd in het Engels** - ook al is de rest van de oefening
+  in het Nederlands. Zelfde eis als voor de demo-scripts in de root. Bestaande
+  oefeningen met Nederlandse scriptnamen (bijv. `cherrypick-meerdere-commits.sh`,
+  `rebase-opnieuw-beginnen.sh`, `reset-soft-uitbreiden.sh`) repareren we later -
+  niet meteen allemaal omzetten, maar nieuwe scriptnamen wel meteen in het Engels.
 - **De voorbeeldoplossingen zijn de `.sh`-scripts in de root** van de repo — voor
   de trainer. **Link daar niet naartoe** vanuit de oefeningen: niet te
   verleidelijk maken dat cursisten spieken.
@@ -32,6 +37,12 @@ voordat je oefeningen toevoegt of aanpast.
 
 ## Schrijfrichtlijnen
 
+- **Altijd een real-world situatie als kapstok.** Zoek bij het toevoegen van
+  een oefening naar een probleem of situatie die cursisten daadwerkelijk
+  tegenkomen bij het werken met git (een verkeerde merge, een vergeten
+  bestand, een typefout in een oude commit, een team dat langs elkaar heen
+  werkt). Introduceer het git-concept via die situatie, niet als kaal
+  commando-lijstje.
 - Nederlands, je-vorm, korte stappen.
 - **Basisoefening:** haalbaar voor iedereen binnen de tijd. Concrete git-commando's
   benoemen mag hier — het is de gedeelde basis.
@@ -48,8 +59,8 @@ voordat je oefeningen toevoegt of aanpast.
     script vanaf `template.sh`, staat op zichzelf): noem ze **Oefening P1 /
     P2 / P3** (soms P4), niet oplopend in moeilijkheid t.o.v. elkaar per se.
     Zet er een zin bij dat het losstaande oefeningen zijn, geen opvolgende
-    delen. Zie `022-interactive-rebase-typefout-repareren.md` en
-    `031-submodule.md` als voorbeeld.
+    delen. Zie `024-interactive-rebase-typefout-repareren.md` en
+    `033-submodule.md` als voorbeeld.
 - **Interactie-regel:** een script mag geen meerdere interactieve stappen
   vereisen. Als er interactie is (bijv. `git rebase -i`), staat die aan het
   **eind** van het script, hooguit gevolgd door een statuscommando (`git log`,
@@ -65,13 +76,16 @@ voordat je oefeningen toevoegt of aanpast.
   concept dat pas later aan bod komt (bijv. `reset` of `rebase` gebruiken vóór
   die oefeningen), meld dat dan expliciet aan de gebruiker in plaats van het
   stilzwijgend op te lossen of te negeren.
+- **Gebruik de term "staging area", niet "index"** - zie
+  [`../CLAUDE.md`](../CLAUDE.md). Letterlijke commando's/flags met "index"
+  erin blijven ongewijzigd.
 - Verwijs naar [`../GIT_BEST_PRACTICES.md`](../GIT_BEST_PRACTICES.md) waar relevant.
 - Houd de markdown lint-schoon (witregels rond koppen en lijsten).
 
 ## Nog te doen
 
-- Oefeningen 015, 019, 020 en 021 afmaken in dezelfde stijl als de bestaande
-  oefeningen (per onderwerp uit de root-README: reset, force push,
-  amend+force push, regeleindes - mergen, rebase, cherry-pick, revert,
-  ~-notatie en reflog/tijdreizen zijn al gedaan). Zet nieuwe oefeningen ook in
-  de juiste sectie van `README.md`.
+- Oefeningen 021, 022 en 023 afmaken in dezelfde stijl als de bestaande
+  oefeningen (per onderwerp uit de root-README: force push, amend+force push,
+  regeleindes - mergen, reset, rebase, cherry-pick, revert, ~-notatie en
+  reflog/tijdreizen zijn al gedaan). Zet nieuwe oefeningen ook in de juiste
+  sectie van `README.md`.

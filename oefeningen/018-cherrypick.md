@@ -1,4 +1,4 @@
-# Oefening 016 — Een losse commit overzetten met `git cherry-pick`
+# Oefening 018 — Een losse commit overzetten met `git cherry-pick`
 
 ## Doel
 

@@ -23,10 +23,10 @@ git add readme.txt
 git status
 git stash
 
-echo "##### something else touches the index #####" > /dev/null
+echo "##### something else touches the staging area #####" > /dev/null
 echo "notes v1" > notes.txt
 git add notes.txt
-git commit -m "unrelated commit that touches the index"
+git commit -m "unrelated commit that touches the staging area"
 
 echo "##### pop the stash #####" > /dev/null
 git stash pop

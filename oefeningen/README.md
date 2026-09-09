@@ -52,50 +52,52 @@ of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 ### Reset
 
-- [015 - `reset --soft`, `--mixed` en `--hard`](015-reset-soft-mixed-hard.md)
+- [015 - Twee slordige commits samenvoegen met `git reset --soft`](015-reset-soft.md)
+- [016 - Een te vroege commit terugdraaien met `git reset --mixed`](016-reset-mixed.md)
+- [017 - Een mislukt experiment weggooien met `git reset --hard`](017-reset-hard.md)
 
 ### Cherry-pick
 
-- [016 - Een losse commit overzetten met `git cherry-pick`](016-cherrypick.md)
+- [018 - Een losse commit overzetten met `git cherry-pick`](018-cherrypick.md)
 
 ### Rebase
 
-- [017 - Rebase: een branch bijwerken op `main`](017-rebase-branch-bijwerken.md)
-- [018 - Commits verplaatsen met `git rebase --onto`](018-rebase-onto.md)
+- [019 - Rebase: een branch bijwerken op `main`](019-rebase-branch-bijwerken.md)
+- [020 - Commits verplaatsen met `git rebase --onto`](020-rebase-onto.md)
 
 ### Force push veilig
 
-- [019 - Veilig force-pushen met `--force-with-lease`](019-veilig-force-pushen.md)
+- [021 - Veilig force-pushen met `--force-with-lease`](021-veilig-force-pushen.md)
 
 ### Amend & force push
 
-- [020 - Amend + force push in een team](020-amend-en-force-push-in-een-team.md)
+- [022 - Amend + force push in een team](022-amend-en-force-push-in-een-team.md)
 
 ### Regeleindes (CRLF/LF)
 
-- [021 - Regeleindes en `.gitattributes`](021-regeleindes-en-gitattributes.md)
+- [023 - Regeleindes en `.gitattributes`](023-regeleindes-en-gitattributes.md)
 
 ### Interactive rebase
 
-- [022 - Een typefout in een oudere commit repareren](022-interactive-rebase-typefout-repareren.md)
-- [023 - WIP-commits opschonen met interactive rebase](023-interactive-rebase-wip-opschonen.md)
-- [024 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](024-interactive-rebase-edit-bestand-verwijderen.md)
-- [025 - Een commit echt weggooien met `drop`](025-interactive-rebase-drop.md)
-- [026 - Een vergeten wijziging in de juiste commit krijgen](026-interactive-rebase-vergeten-wijziging.md)
-- [027 - Eén commit opsplitsen in twee](027-interactive-rebase-splitsen.md)
-- [028 - Een vergeten bestand alsnog in de juiste commit krijgen](028-interactive-rebase-vergeten-bestand.md)
+- [024 - Een typefout in een oudere commit repareren](024-interactive-rebase-typefout-repareren.md)
+- [025 - WIP-commits opschonen met interactive rebase](025-interactive-rebase-wip-opschonen.md)
+- [026 - Een per ongeluk toegevoegd bestand uit een oudere commit halen](026-interactive-rebase-edit-bestand-verwijderen.md)
+- [027 - Een commit echt weggooien met `drop`](027-interactive-rebase-drop.md)
+- [028 - Een vergeten wijziging in de juiste commit krijgen](028-interactive-rebase-vergeten-wijziging.md)
+- [029 - Eén commit opsplitsen in twee](029-interactive-rebase-splitsen.md)
+- [030 - Een vergeten bestand alsnog in de juiste commit krijgen](030-interactive-rebase-vergeten-bestand.md)
 
 ### Stash
 
-- [029 - Werk opzijzetten met `git stash`](029-stash.md)
+- [031 - Werk opzijzetten met `git stash`](031-stash.md)
 
 ### Worktree
 
-- [030 - Werk onderbreken met `git worktree`](030-worktree.md)
+- [032 - Werk onderbreken met `git worktree`](032-worktree.md)
 
 ### Submodules
 
-- [031 - Een link naar een andere repo opnemen met `git submodule`](031-submodule.md)
+- [033 - Een link naar een andere repo opnemen met `git submodule`](033-submodule.md)
 
 ### Atomic commits
 
