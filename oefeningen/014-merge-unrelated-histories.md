@@ -2,9 +2,9 @@
 
 ## Doel
 
-Soms wil je twee repo's die niets met elkaar te maken hebben - geen
-gemeenschappelijke voorouder-commit - toch samenvoegen, bijvoorbeeld omdat
-een oud, apart bijgehouden project alsnog in je hoofdproject moet landen.
+Soms wil je twee repo's die niets met elkaar te maken hebben
+toch samenvoegen, bijvoorbeeld omdat
+een oud apart bijgehouden project alsnog in je hoofdproject moet landen.
 Een gewone `git merge` weigert dat. Je leert hoe je dat bewust forceert.
 
 ## Basisoefening
@@ -18,19 +18,20 @@ hebt hiervoor **twee losse repo's** nodig, dus wijk op dat punt af van
 2. Maak, volledig los daarvan, een tweede repo `project-old` met zijn eigen
    eerste commit - twee onafhankelijke repo's zonder enige gedeelde
    geschiedenis.
-3. Voeg vanuit `project-a` de map van `project-old` toe als remote, en haal
-   die op.
+3. Voeg vanuit `project-a` de map van `project-old` toe als remote met
+   `git remote add old ../project-old`, en haal de geschiedenis daarvan
+   op met `git fetch old`.
 4. Probeer `project-old` in `project-a` te mergen met een gewone
-   `git merge`. Bekijk dat Git dit weigert.
-5. Merge opnieuw, maar nu met de vlag die Git toestemming geeft om twee
-   losse histories samen te voegen.
-6. Bekijk dat de bestanden van beide projecten nu naast elkaar in
+   `git merge`. Zie dat Git dit weigert.
+5. Merge opnieuw, maar nu met de vlag `--allow-unrelated-histories`
+   die Git toestemming geeft om twee losse histories samen te voegen.
+6. Zie dat de bestanden van beide projecten nu naast elkaar in
    `project-a` staan.
 
-**Klaar wanneer:** de eerste, gewone merge-poging is aantoonbaar geweigerd,
-de tweede poging is wél geslaagd, `project-a` bevat na afloop de bestanden
-van beide oorspronkelijke repo's, en `git log --oneline --graph --all` toont
-een merge-commit met twee compleet gescheiden geschiedenissen die
+**Klaar wanneer:** de eerste, gewone merge-poging aantoonbaar is geweigerd,
+de tweede poging wel is geslaagd, `project-a` na afloop de bestanden
+van beide oorspronkelijke repo's bevat , en `git log --oneline --graph --all`
+een merge-commit met twee compleet gescheiden geschiedenissen toont die
 samenkomen.
 
 ## Plus-oefening — het oude project in een submap onderbrengen
