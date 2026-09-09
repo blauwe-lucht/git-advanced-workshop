@@ -97,12 +97,16 @@ of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 - [031 - Een link naar een andere repo opnemen met `git submodule`](031-submodule.md)
 
+### Atomic commits
+
+TODO
+
 ### Bonus: Jujutsu (jj)
 
 Je hebt nu gezien hoe lastig Git's interface kan zijn, terwijl het onderliggende
 model (commits, branches, merges) prima in elkaar zit. [Jujutsu](https://github.com/jj-vcs/jj)
-(`jj`) is een nieuwere VCS die op datzelfde Git-model werkt - je repo blijft
-gewoon een `.git`-map, compatibel met GitHub/GitLab - maar met een eenvoudigere
+(`jj`) is een nieuwere VCS die met Git kan werken: Je repo blijft
+gewoon een `.git`-map, compatibel met Git, maar met een eenvoudigere
 en veiligere interface: geen staging area, elke actie is ongedaan te maken met
 `jj undo`, en conflicten blokkeren je werk niet meer maar worden gewoon
 meegenomen totdat je ze oplost. Deze bonusoefeningen volgen later.
