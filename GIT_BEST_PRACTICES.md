@@ -2,7 +2,14 @@
 
 ## Commits
 
-- Keep commits small and focused on one logical change.
+- Keep commits small and focused on one logical change — this is called an
+  **atomic commit**. Don't mix an unrelated refactor, a formatting pass, and
+  a bug fix into the same commit just because you touched the same files.
+- Each commit should leave the repo in a working state (it builds, tests
+  pass) on its own, not just the final commit in a series. This is what makes
+  `git bisect`, `git revert`, and `git cherry-pick` reliable — reverting or
+  picking one commit shouldn't require also reverting or picking three others
+  to keep things working.
 - Write commit messages that explain *why*, not just *what* — the diff already
   shows what changed.
 - Don't commit half-finished or broken work to shared branches.
