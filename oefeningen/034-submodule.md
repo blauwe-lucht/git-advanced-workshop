@@ -1,4 +1,4 @@
-# Oefening 033 - Een andere repo opnemen met `git submodule`
+# Oefening 034 - Een andere repo opnemen met `git submodule`
 
 ## Doel
 

@@ -1,4 +1,4 @@
-# Oefening 026 — Een per ongeluk toegevoegd bestand uit een oudere commit halen
+# Oefening 027 — Een per ongeluk toegevoegd bestand uit een oudere commit halen
 
 ## Doel
 
