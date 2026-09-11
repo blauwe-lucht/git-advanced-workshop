@@ -34,6 +34,8 @@ voordat je oefeningen toevoegt of aanpast.
   verleidelijk maken dat cursisten spieken.
 - Elke oefening maakt een verse `repos/`-map *from scratch* aan (zoals de
   demo-scripts) en staat op zichzelf.
+- Optioneel beginscenario via `setup/<nummer>-setup.sh` in de root - zie
+  [`../CLAUDE.md`](../CLAUDE.md#setup-scripts) - i.p.v. stap 2 hierboven.
 
 ## Schrijfrichtlijnen
 
@@ -59,15 +61,12 @@ voordat je oefeningen toevoegt of aanpast.
     script vanaf `template.sh`, staat op zichzelf): noem ze **Oefening P1 /
     P2 / P3** (soms P4), niet oplopend in moeilijkheid t.o.v. elkaar per se.
     Zet er een zin bij dat het losstaande oefeningen zijn, geen opvolgende
-    delen. Zie `025-interactive-rebase-typefout-repareren.md` en
+    delen. Zie `024-interactive-rebase-typefout-repareren.md` en
     `034-submodule.md` als voorbeeld.
-- **Interactie-regel:** een script mag geen meerdere interactieve stappen
-  vereisen. Als er interactie is (bijv. `git rebase -i`), staat die aan het
-  **eind** van het script, hooguit gevolgd door een statuscommando (`git log`,
-  `git reflog`). Ideaal is één script dat per Plus-deel verder wordt uitgebreid;
-  maar zodra een deel interactief is, wordt dát deel een **eigen script** (dus
-  bij interactive rebase: één script per deel). Zet nooit een tweede `rebase -i`
-  achter de eerste in hetzelfde script.
+- **Interactie-regel:** een script mag maximaal één interactieve stap bevatten
+  (bijv. één `git rebase -i`). Na die stap mag het script gewoon doorlopen met
+  automatische vervolgcommando's. Heeft een Plus-deel een eigen interactieve
+  stap nodig, dan wordt dat deel een **eigen script**.
 - **Volgorde van concepten:** een oefening mag alleen git-concepten gebruiken
   (ook impliciet, om iets op te lossen) die al in een eerdere, lager genummerde
   oefening zijn geïntroduceerd - dit geldt zowel voor de basisoefening als de
@@ -84,8 +83,7 @@ voordat je oefeningen toevoegt of aanpast.
 
 ## Nog te doen
 
-- Oefeningen 023 en 024 afmaken in dezelfde stijl als de bestaande oefeningen
-  (per onderwerp uit de root-README: amend+force push, regeleindes - mergen,
-  reset, rebase, cherry-pick, force push, revert, ~-notatie en
-  reflog/tijdreizen zijn al gedaan). Zet nieuwe oefeningen ook in de juiste
-  sectie van `README.md`.
+- Oefening 023 afmaken in dezelfde stijl als de bestaande oefeningen (regeleindes
+  en `.gitattributes` - mergen, reset, rebase, cherry-pick, force push, revert,
+  ~-notatie, reflog/tijdreizen en secret-uit-geschiedenis zijn al gedaan). Zet
+  de nieuwe oefening ook in de juiste sectie van `README.md`.
