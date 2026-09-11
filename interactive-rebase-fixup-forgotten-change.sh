@@ -34,6 +34,8 @@ echo "##### Committing the forgotten file as a fixup for the second commit #####
 git add new-file.txt
 git commit --fixup=HEAD~1
 
+git log --oneline --graph --all
+
 echo "##### Autosquash rebase: fixup will move next to and merge into the second commit #####" > /dev/null
 git rebase -i --autosquash HEAD~3
 # The todo list is already ordered correctly by --autosquash (the fixup
