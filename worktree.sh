@@ -26,10 +26,7 @@ echo "##### unfinished change on the feature branch, not committed yet #####" > 
 echo "unfinished..." >> readme.txt
 git status
 
-echo "##### a hotfix is needed urgently, but the uncommitted change on the #####" > /dev/null
-echo "##### feature branch must not be touched. the hotfix also shouldn't be #####" > /dev/null
-echo "##### committed directly on main, so add a second worktree with a new #####" > /dev/null
-echo "##### hotfix branch from main #####" > /dev/null
+echo "##### add worktree where the hotfix can be developed #####" > /dev/null
 git worktree add -b hotfix/urgent ../repo-hotfix main
 git worktree list
 
