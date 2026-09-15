@@ -7,27 +7,24 @@ rm -rf repos
 mkdir repos
 cd repos
 
-echo "##### project-a: this is the main project #####" > /dev/null
-mkdir project-a
-cd project-a
 git init
-echo "main commit 1" > app.txt
-git add app.txt
-git commit -m "main commit 1 - add app.txt"
-cd ..
 
-echo "##### project-old: a completely separate repo with its own, unrelated history #####" > /dev/null
-mkdir project-old
-cd project-old
-git init
-echo "old commit 1" > legacy.txt
-git add legacy.txt
-git commit -m "old commit 1 - add legacy.txt"
-cd ..
+echo "##### main commit 1 #####" > /dev/null
+echo "main commit 1" > config.txt
+git add config.txt
+git commit -m "main commit 1 - add config.txt"
 
-echo "##### bring project-old in as a remote of project-a #####" > /dev/null
-cd project-a
-git remote add old ../project-old
-git fetch old
+echo "##### feature commit 1 - feature changes the setting #####" > /dev/null
+git switch -c feature
+echo "feature commit 1" > config.txt
+git commit -am "feature commit 1 - update config.txt"
 
-# try to merge it in yourself
+echo "##### main commit 2 - main changes the same setting independently, this would normally conflict #####" > /dev/null
+git switch main
+echo "main commit 2" > config.txt
+git commit -am "main commit 2 - update config.txt"
+
+git status
+git log --oneline --graph --all
+
+# force the merge to always keep main's own version of config.txt yourself

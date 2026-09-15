@@ -43,7 +43,7 @@ dienen voor de oefeningen in [`oefeningen/`](oefeningen/CLAUDE.md).
 
 Een cursist kan het zelf schrijven van het beginscenario overslaan met
 `setup/<nummer>-setup.sh`
-(bijv. [`setup/008-setup.sh`](setup/008-setup.sh)) in plaats van dat zelf op
+(bijv. [`setup/009-setup.sh`](setup/009-setup.sh)) in plaats van dat zelf op
 te bouwen. Zelfde scriptconventies als hierboven; bouwt alleen het
 beginscenario op (kopieer de eerste stappen van het voorbeeldscript, laat de
 oplossing weg). Alleen voor oefeningen die de cursist al zelfstandig had

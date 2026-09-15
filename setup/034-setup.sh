@@ -1,32 +1,31 @@
 #!/bin/bash
 
-set -xeuo pipefail
-
-# local file:// submodule URLs are blocked by default since Git 2.38 (CVE-2022-39253);
-# allow them for this script only, without touching global git config
-export GIT_ALLOW_PROTOCOL=file
+set -xe
 
 rm -rf repos
-mkdir repos && cd repos
 
-git init --bare origin-shared-lib
-git init --bare origin-app
+mkdir repos
+cd repos
 
-# alice seeds the library with a first commit before she can add it as a
-# submodule: an empty repo has no HEAD to check out, so "git submodule add"
-# on origin-shared-lib as-is would fail with "You are on a branch yet to be
-# born" - it needs at least one commit to point at first
-echo "##### alice seeds the library with an initial commit #####" > /dev/null
-git clone origin-shared-lib alice-shared-lib
-cd alice-shared-lib
-echo "function greet() { echo Hello; }" > greet.sh
-git add greet.sh
-git commit -m "add greet function"
-git push
-cd ..
-rm -rf alice-shared-lib
+git init repo
+cd repo
 
-git clone origin-app alice-app
-cd alice-app
+echo "##### first commit on main #####" > /dev/null
+echo "first commit" > readme.txt
+git add readme.txt
+git commit -m "initial commit"
 
-# add origin-shared-lib as a submodule yourself
+echo "##### feature branch from main with its own commit #####" > /dev/null
+git switch -c feature/new-feature
+
+echo "first commit on feature branch" > feature.txt
+git add feature.txt
+git commit -m "added feature"
+
+echo "##### unfinished change on the feature branch, not committed yet #####" > /dev/null
+echo "unfinished..." >> readme.txt
+
+git status
+git log --oneline --graph --all
+
+# add a second worktree with a hotfix branch from main yourself
