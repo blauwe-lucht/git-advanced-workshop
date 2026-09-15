@@ -126,16 +126,20 @@ whether run on Linux, macOS, or Windows Git Bash.
 
 ## TODO
 
-- tags
+- tags - introduce after `006-branchen-vanaf-oudere-commit` and before
+  `007-redden-met-de-reflog`: a tag is a natural upgrade to 006's "commit die
+  nu in productie staat", and checking one out is a third source of detached
+  HEAD alongside `005-tijdreizen-met-switch-detach`
 - restore
-- cherrypick
 - git hooks
 - LFS
-- make sure topics are introduced while solving practical problems
-- write these oefeningen, already referenced from `oefeningen/README.md` but
-  not created yet:
-  - `oefeningen/008-merge-strategieen-en-conflicten.md`
-  - `oefeningen/009-reset-soft-mixed-hard.md`
-  - `oefeningen/012-veilig-force-pushen.md`
-  - `oefeningen/013-amend-en-force-push-in-een-team.md`
-  - `oefeningen/014-regeleindes-en-gitattributes.md`
+- write `oefeningen/023-regeleindes-en-gitattributes.md` - the `023-crlf-*.sh`
+  solutions already exist in `solutions/`, see `oefeningen/CLAUDE.md`
+- write solutions for `019-rebase-branch-bijwerken`,
+  `020-rebase-onto`, `024-interactive-rebase-typefout-repareren`,
+  `027-interactive-rebase-drop` and `029-interactive-rebase-splitsen` - these
+  exercises exist but have no `solutions/0XX-*.sh` yet
+- the `022-amend-force-push-*.sh` solutions overlap - `fix.sh` and
+  `alice-new-commit-rebase.sh` both resolve the same situation via different
+  techniques, and `pull-error.sh`/`pull-conflict.sh` look like earlier drafts
+  of the same attempt; worth consolidating into one clear Plus solution
