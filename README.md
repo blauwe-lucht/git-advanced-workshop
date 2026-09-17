@@ -127,8 +127,8 @@ whether run on Linux, macOS, or Windows Git Bash.
 ## TODO
 
 - restore
-- git hooks
-- LFS
+- git hooks -> to git expert workshop
+- LFS -> to git expert workshop
 - write `oefeningen/024-regeleindes-en-gitattributes.md` - the `024-crlf-*.sh`
   solutions already exist in `solutions/`, see `oefeningen/CLAUDE.md`
 - write solutions for `020-rebase-branch-bijwerken`,
