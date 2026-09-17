@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init repo
+git init -b main repo
 cd repo
 
 echo "##### first commit on main #####" > /dev/null

@@ -10,7 +10,7 @@ cd repos
 echo "##### project-a: this is the main project #####" > /dev/null
 mkdir project-a
 cd project-a
-git init
+git init -b main
 echo "main commit 1" > app.txt
 git add app.txt
 git commit -m "main commit 1 - add app.txt"
@@ -19,7 +19,7 @@ cd ..
 echo "##### project-old: a completely separate repo with its own, unrelated history #####" > /dev/null
 mkdir project-old
 cd project-old
-git init
+git init -b main
 echo "old commit 1" > legacy.txt
 git add legacy.txt
 git commit -m "old commit 1 - add legacy.txt"
