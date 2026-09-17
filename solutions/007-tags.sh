@@ -4,7 +4,7 @@ set -xeuo pipefail
 
 rm -rf repos
 mkdir repos && cd repos
-git init --bare origin
+git init --bare -b main origin
 
 git clone origin alice
 git clone origin bob

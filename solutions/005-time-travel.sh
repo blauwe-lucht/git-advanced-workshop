@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init
+git init -b main
 
 echo "##### commit 1 - greet.sh works #####" > /dev/null
 cat > greet.sh << 'EOF'

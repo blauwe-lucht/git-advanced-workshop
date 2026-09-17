@@ -6,7 +6,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init --bare origin
+git init --bare -b main origin
 
 git clone origin bob
 git clone origin alice

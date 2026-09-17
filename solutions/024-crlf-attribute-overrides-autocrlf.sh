@@ -6,7 +6,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init --bare origin
+git init --bare -b main origin
 
 echo "##### alice writes the original files and pins *.sh to LF via .gitattributes; notes.txt is left unpinned #####" > /dev/null
 git clone origin alice

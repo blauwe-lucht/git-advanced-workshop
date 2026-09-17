@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init
+git init -b main
 
 echo "##### build up four commits on main #####" > /dev/null
 echo "version 1" > file.txt

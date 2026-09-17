@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init
+git init -b main
 
 echo "version 1" > file1.txt
 git add file1.txt

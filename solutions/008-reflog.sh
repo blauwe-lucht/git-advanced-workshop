@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init
+git init -b main
 
 echo "##### commit version A #####" > /dev/null
 echo "version A" > file.txt

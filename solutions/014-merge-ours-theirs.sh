@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init
+git init -b main
 
 echo "##### main commit 1 #####" > /dev/null
 echo "main commit 1" > config.txt

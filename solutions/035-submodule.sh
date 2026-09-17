@@ -9,8 +9,8 @@ export GIT_ALLOW_PROTOCOL=file
 rm -rf repos
 mkdir repos && cd repos
 
-git init --bare origin-shared-lib
-git init --bare origin-app
+git init --bare -b main origin-shared-lib
+git init --bare -b main origin-app
 
 # alice seeds the library with a first commit before she can add it as a
 # submodule: an empty repo has no HEAD to check out, so "git submodule add"

@@ -7,7 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init
+git init -b main
 
 echo "##### this commit is what's currently in production #####" > /dev/null
 echo "version 1" > file.txt
