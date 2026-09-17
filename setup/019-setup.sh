@@ -7,13 +7,7 @@ rm -rf repos
 mkdir repos
 cd repos
 
-git init --bare origin
-
-git clone origin alice
-git clone origin bob
-git clone origin charlie
-
-git alice
+git init
 
 echo "##### main commit 1 - with a typo (ehco instead of echo) #####" > /dev/null
 echo 'ehco "First commit"' > run.sh
@@ -47,9 +41,4 @@ git commit -am "feature commit 3 - add line"
 
 git log --oneline --graph --all
 
-echo "##### the fix needs to reach main, without the rest of the feature branch #####" > /dev/null
-git switch main
-git cherry-pick feature~1
-
-bash run.sh
-git log --oneline --graph --all
+# get the fix to main, without the rest of the feature branch
