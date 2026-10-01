@@ -40,8 +40,8 @@ git status --short
 git diff --stat
 git diff -- file1.txt | cat -A
 
-echo "##### the fix: a fresh checkout re-applies the CURRENT autocrlf setting to the whole working tree #####" > /dev/null
-git checkout -- .
+echo "##### the fix: restoring every file from the staging area re-applies the CURRENT autocrlf setting to the whole working tree #####" > /dev/null
+git restore .
 git status --short
 git ls-files --eol
 cd ..
