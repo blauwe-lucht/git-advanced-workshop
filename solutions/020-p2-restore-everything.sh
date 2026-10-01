@@ -22,6 +22,10 @@ echo "unstaged change" >> file2.txt
 echo "new file" > new.txt
 git status
 
+echo "##### throw away all modified files (leaves staged file alone) #####" > /dev/null
+git restore .
+git status
+
 echo "##### throw away all changes to tracked files in one go #####" > /dev/null
 git restore --staged --worktree .
 

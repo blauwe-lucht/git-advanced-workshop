@@ -2,7 +2,7 @@
 
 ## Doel
 
-Je bent aan het werk en niet alles wat je wijzigt is een goed idee. Soms wil
+Je bent aan het werk en niet alles wat je wijzigt blijkt een goed idee. Soms wil
 je één bestand terugzetten naar hoe het in de laatste commit stond, soms heb
 je met `git add .` iets in de staging area gezet dat daar niet hoort.
 `git reset` (017-019) werkt op commits en neemt de hele branch mee;
@@ -25,8 +25,8 @@ Let goed op de eerste regel: een kale `git restore` haalt de versie uit de
 **staging area**, niet uit de laatste commit. Heb je niets gestaged, dan zijn
 die twee gelijk en merk je het verschil niet.
 
-Let op: `git status` stelt deze commando's zelf ook voor - kijk maar eens naar
-de hints in de uitvoer.
+Let op: `git status` stelt deze commando's zelf ook voor, kijk maar eens naar
+de hints die `git status` toont nadat je een bestand hebt ge-add.
 
 ## Basisoefening
 
