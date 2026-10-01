@@ -9,6 +9,10 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | --- | --- |
 | `commit.sh` | Creating a simple commit |
 | `collaborate.sh` | Alice and Bob working on feature branches and merging to main to emulate a PR/MR workflow |
+| `staging-area.sh` | One file with three different versions in `HEAD`, the staging area and the working tree, made visible with `git show HEAD:file`, `git show :file` and `cat`; `git ls-files --stage` shows the staging area holds every tracked file, and `git commit` takes the staging area, not the working tree |
+| `staging-area-new-file.sh` | A new file goes from working tree only, to staging area (`git add`), to `HEAD` (`git commit`) |
+| `staging-area-delete.sh` | `rm` only removes a file from the working tree, so it stays in the next commit; `git rm` also removes it from the staging area |
+| `staging-area-partial.sh` | `git add -p` stages one of two hunks, so the staging area holds a version of the file that never existed on disk (interactive) |
 | `time-travel.sh` | A client reports a version of your script is broken; `git switch --detach` to verify, then switch back to `main` |
 | `time-travel-branch-from-older-commit.sh` | Starting a hotfix branch from an older commit instead of the tip of `main`, by detaching there first and turning it into a real branch with `git switch -c` |
 | `time-travel-back-and-forth.sh` | Jumping between several old commits with `git switch --detach main~N` — each jump has to be relative to `main`, since `HEAD~N` breaks the moment you're already detached elsewhere |
@@ -25,7 +29,7 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | Script | What it shows |
 | --- | --- |
 | `look-back.sh` | Use ~-notation to look at earlier commits and commits on other branches without needing to copy a commit hash or switch branches |
-| `look-back-plus.sh` | `main` splits off early (1 commit of its own), then `feature-a` splits off further along a shared line (3 commits from its tip), then `feature-b` continues that same line further still (5 commits from its tip); the shared split point is reachable four different ways - `main~1`, `feature-a~3`, `feature-b~5`, and `main^` - all resolving to the exact same commit |
+| `003-p-look-back.sh` | `main` splits off early (1 commit of its own), then `feature-a` splits off further along a shared line (3 commits from its tip), then `feature-b` continues that same line further still (5 commits from its tip); the shared split point is reachable four different ways - `main~1`, `feature-a~3`, `feature-b~5`, and `main^` - all resolving to the exact same commit |
 
 ## Amend
 
@@ -66,6 +70,22 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | `reset-mixed.sh` | Moves the branch pointer back, changes dropped to working tree |
 | `reset-hard.sh` | Moves the branch pointer back, changes are gone |
 | `reset-undo-amend.sh` | Uses the reflog and `HEAD@{1}` to undo an amend |
+
+## Restore
+
+| Script | What it shows |
+| --- | --- |
+| `restore.sh` | Per-file undo without touching commits: `git restore` discards a working tree change, `--staged` takes a file out of the staging area, `--staged --worktree` does both |
+| `restore-deleted-file.sh` | Gets back a file deleted with `rm` and one deleted with `git rm`, without a new commit |
+| `restore-everything.sh` | `git restore --staged --worktree .` discards all changes to tracked files, but leaves an untracked file alone |
+| `restore-partial.sh` | `git restore -p` discards one of two hunks in the same file (interactive) |
+| `restore-irreversible.sh` | A commit dropped with `reset --hard` is still in the reflog, a working tree change dropped with `restore` is not - unless it was staged once, then `git fsck --lost-found` finds the dangling blob |
+| `restore-source.sh` | `git restore --source=feature` takes one file from an unfinished branch without merging it |
+| `restore-source-older-commit.sh` | Restores one file from before a bad commit, keeping the good changes that commit made to other files (where `revert` would undo both) |
+| `restore-source-amend.sh` | `git restore --staged --source=HEAD~1` + `commit --amend` takes a file out of the last commit while keeping the change in the working tree |
+| `restore-source-reflog.sh` | After a too-eager `reset --hard`, takes one file from the lost commit via `HEAD@{1}` without moving the branch back |
+| `restore-merge-conflict.sh` | Resolves a two-file merge conflict per file with `git restore --ours` and `--theirs` |
+| `restore-merge-redo.sh` | A botched conflict resolution, already marked as resolved, gets its conflict markers back with `git restore --merge` |
 
 ## Rebase
 
@@ -126,16 +146,15 @@ whether run on Linux, macOS, or Windows Git Bash.
 
 ## TODO
 
-- restore
 - git hooks -> to git expert workshop
 - LFS -> to git expert workshop
-- write `oefeningen/024-regeleindes-en-gitattributes.md` - the `024-crlf-*.sh`
+- write `oefeningen/028-regeleindes-en-gitattributes.md` - the `028-crlf-*.sh`
   solutions already exist in `solutions/`, see `oefeningen/CLAUDE.md`
-- write solutions for `020-rebase-branch-bijwerken`,
-  `021-rebase-onto`, `025-interactive-rebase-typefout-repareren`,
-  `028-interactive-rebase-drop` and `030-interactive-rebase-splitsen` - these
+- write solutions for `024-rebase-branch-bijwerken`,
+  `025-rebase-onto`, `029-interactive-rebase-typefout-repareren`,
+  `032-interactive-rebase-drop` and `034-interactive-rebase-splitsen` - these
   exercises exist but have no `solutions/0XX-*.sh` yet
-- the `023-amend-force-push-*.sh` solutions overlap - `fix.sh` and
+- the `027-p-amend-force-push-*.sh` solutions overlap - `fix.sh` and
   `alice-new-commit-rebase.sh` both resolve the same situation via different
   techniques, and `pull-error.sh`/`pull-conflict.sh` look like earlier drafts
   of the same attempt; worth consolidating into one clear Plus solution

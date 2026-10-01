@@ -27,4 +27,4 @@ git commit -am "feature commit 2 - update feature.txt"
 git status
 git log --oneline --graph --all
 
-# force a merge commit yourself
+# merge feature into main yourself

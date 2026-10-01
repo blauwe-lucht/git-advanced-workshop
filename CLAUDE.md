@@ -19,6 +19,11 @@ dienen voor de oefeningen in [`oefeningen/`](oefeningen/CLAUDE.md).
   Zie [`cherrypick.sh`](cherrypick.sh) of [`merge-diverged.sh`](merge-diverged.sh)
   als voorbeeld.
 - **Scripts zijn uitvoerbaar.** Zet `chmod u+x` op elk `.sh`-bestand.
+- **Naamgeving in `solutions/`.** Basisoefening: `<nummer>-<naam>.sh`.
+  Plus-oefening: `<nummer>-p<deel>-<naam>.sh`, waarbij `<deel>` het label
+  uit de oefening volgt (`p1`, `p2` bij "Oefening P1/P2", `pa`, `pb` bij een
+  los script per "Deel A/B"). Is de Plus één doorlopend script, dan gewoon
+  `<nummer>-p-<naam>.sh`.
 - **Gebruik `git commit -am` waar mogelijk** om `git add` en `git commit` in
   één regel te combineren en het script compacter te houden. Dit werkt alleen
   voor wijzigingen aan bestanden die al getrackt zijn - de eerste keer dat een
@@ -43,7 +48,7 @@ dienen voor de oefeningen in [`oefeningen/`](oefeningen/CLAUDE.md).
 
 Een cursist kan het zelf schrijven van het beginscenario overslaan met
 `setup/<nummer>-setup.sh`
-(bijv. [`setup/009-setup.sh`](setup/009-setup.sh)) in plaats van dat zelf op
+(bijv. [`setup/010-setup.sh`](setup/010-setup.sh)) in plaats van dat zelf op
 te bouwen. Zelfde scriptconventies als hierboven; bouwt alleen het
 beginscenario op (kopieer de eerste stappen van het voorbeeldscript, laat de
 oplossing weg). Alleen voor oefeningen die de cursist al zelfstandig had

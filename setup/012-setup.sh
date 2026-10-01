@@ -24,11 +24,7 @@ echo "##### feature commit 2 #####" > /dev/null
 echo "feature commit 2" >> feature.txt
 git commit -am "feature commit 2 - update feature.txt"
 
-echo "##### feature commit 3 - fix typo #####" > /dev/null
-echo "feature commit 3" >> feature.txt
-git commit -am "feature commit 3 - fix typo"
-
 git status
 git log --oneline --graph --all
 
-# squash merge feature into main yourself
+# force a merge commit yourself
