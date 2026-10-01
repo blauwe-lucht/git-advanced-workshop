@@ -19,9 +19,9 @@ of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 - [001 - Committen en samenwerken via branches](001-committen-en-samenwerken.md)
 
-### De staging area
+### Working tree, de staging area en HEAD
 
-- [002 - De staging area: drie versies van een bestand](002-staging-area.md)
+- [002 - Drie versies van een bestand](002-staging-area.md)
 
 ### Terugkijken
 

@@ -1,4 +1,4 @@
-# Oefening 002 - De staging area: drie versies van een bestand
+# Oefening 002 - Drie versies van een bestand
 
 ## Doel
 
@@ -8,16 +8,16 @@ aangepast. Wat komt er nu eigenlijk in je commit? Om dat (en straks ook
 getrackt bestand **drie versies** kan hebben:
 
 ```text
-working tree  --git add-->  staging area  --git commit-->  HEAD
-(je bestanden)              (de volgende commit)           (de laatste commit)
+working tree        --git add-->   staging area   --git commit-->  HEAD
+(bestanden op schijf)          (de volgende commit)           (de laatste commit)
 ```
 
-- **HEAD** is de laatste commit.
+- De **working tree** zijn de bestanden zoals ze nu op je schijf staan.
 - De **staging area** is een **complete snapshot van de volgende commit**:
   álle getrackte bestanden, niet alleen de gewijzigde. `git add` overschrijft
   de versie van een bestand in die snapshot, `git commit` maakt van de hele
   snapshot een nieuwe commit.
-- De **working tree** zijn de bestanden zoals ze nu op je schijf staan.
+- **HEAD** is de laatste commit.
 
 `git status` laat niet de staging area zelf zien, maar alleen de **verschillen**:
 "Changes to be committed" is staging area vs HEAD (`git diff --staged`),
@@ -92,7 +92,7 @@ Schrijf een script `staging-area-delete.sh`.
   commit zit, en dat het tweede bestand uit de staging area én uit de nieuwe
   commit verdwenen is.
 
-### Oefening P3 - de helft van een bestand stagen
+### Oefening P3 - een gedeelte van een bestand stagen
 
 Schrijf een script `staging-area-partial.sh`.
 
