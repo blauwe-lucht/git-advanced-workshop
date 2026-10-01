@@ -37,17 +37,17 @@ echo "hotfix" > hotfix.txt
 git add hotfix.txt
 git commit -m "hotfix: fixed!"
 
-echo "##### back to the original worktree #####" > /dev/null
+echo "##### merge the hotfix branch into main from the hotfix worktree #####" > /dev/null
+git switch main
+git merge hotfix/urgent -m "merge hotfix/urgent into main"
+git branch -d hotfix/urgent
+
+echo "##### back to the original worktree, unfinished change is untouched #####" > /dev/null
 cd ../repo
 git status
 
-echo "##### merge the hotfix branch into main from the original worktree #####" > /dev/null
-git switch main
-git merge --no-ff hotfix/urgent -m "merge hotfix/urgent into main"
-
-echo "##### clean up the second worktree and the hotfix branch #####" > /dev/null
+echo "##### clean up the second worktree #####" > /dev/null
 git worktree remove ../repo-hotfix
-git branch -d hotfix/urgent
 git worktree list
 git branch
 git log --oneline --graph --all

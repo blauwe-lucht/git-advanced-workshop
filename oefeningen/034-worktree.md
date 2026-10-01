@@ -22,15 +22,20 @@ Schrijf vanaf `template.sh` een script `worktree.sh` (een gewone repo in
    vanaf `main`.
 5. Maak in die tweede werkmap de hotfix: wijzig een bestand, commit op de
    hotfix-branch.
-6. Ga terug naar de oorspronkelijke werkmap en bekijk met `git status` dat de
-   onafgemaakte wijziging op de feature-branch nog precies zo staat.
-7. Merge de hotfix-branch vanuit de oorspronkelijke werkmap in `main`.
-8. Ruim de tweede werkmap en de hotfix-branch op.
+6. Merge de hotfix-branch in `main` - ook dat doe je in de tweede werkmap.
+   Wissel je in de oorspronkelijke werkmap naar `main`, dan neem je je
+   onafgemaakte wijziging mee en ben je het voordeel van de worktree kwijt.
+   Verwijder daarna, nog steeds in de tweede werkmap, de hotfix-branch.
+7. Ga terug naar de oorspronkelijke werkmap en bekijk met `git status` dat je
+   nog op de feature-branch staat en dat de onafgemaakte wijziging nog precies
+   zo staat.
+8. Ruim de tweede werkmap op.
 
 **Klaar wanneer:** de hotfix nooit rechtstreeks op `main` is gecommit maar via
-een eigen branch daarin gemerged is, de onafgemaakte wijziging op de
-feature-branch nooit weg is geweest, en `git worktree list` en `git branch`
-tonen geen resten meer van de hotfix-branch of de tweede werkmap.
+een eigen branch daarin gemerged is, de oorspronkelijke werkmap de hele tijd op
+de feature-branch is gebleven met de onafgemaakte wijziging erin, en
+`git worktree list` en `git branch` tonen geen resten meer van de
+hotfix-branch of de tweede werkmap.
 
 ## Plus-oefening - meer met worktrees
 
