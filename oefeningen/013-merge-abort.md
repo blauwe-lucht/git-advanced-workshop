@@ -2,7 +2,7 @@
 
 ## Doel
 
-Soms merk je halverwege een merge dat het toch gaat zoals je wilde:
+Soms merk je halverwege een merge dat het toch niet gaat zoals je wilde:
 onverwachte conflicten, de conflicten zijn groter dan verwacht, of
 het blijkt de verkeerde branch te
 zijn. Je leert hoe je zo'n merge volledig terugdraait en weer terugkomt op de
