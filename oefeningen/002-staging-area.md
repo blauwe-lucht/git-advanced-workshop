@@ -1,15 +1,16 @@
-# Oefening 002 - Drie versies van een bestand
+# Oefening 002 - Vier versies van een bestand
 
 ## Doel
 
 Je hebt een bestand gewijzigd en `git add` gedaan, en daarna nog iets
 aangepast. Wat komt er nu eigenlijk in je commit? Om dat (en straks ook
 `amend`, `reset` en `restore`) echt te snappen, moet je weten dat Git van elk
-getrackt bestand **drie versies** kan hebben:
+getrackt bestand **drie lokale versies** kan hebben, plus een vierde zodra je
+met een remote werkt:
 
 ```text
-working tree        --git add-->   staging area   --git commit-->  HEAD
-(bestanden op schijf)          (de volgende commit)           (de laatste commit)
+working tree     --git add-->  staging area   --git commit-->  HEAD     --git push-->  origin/main
+(bestanden op schijf)      (de volgende commit)       (de laatste commit)       (wat origin heeft)
 ```
 
 - De **working tree** zijn de bestanden zoals ze nu op je schijf staan.
@@ -18,56 +19,66 @@ working tree        --git add-->   staging area   --git commit-->  HEAD
   de versie van een bestand in die snapshot, `git commit` maakt van de hele
   snapshot een nieuwe commit.
 - **HEAD** is de laatste commit.
+- **`origin/main`** is jouw lokale kopie van `main` op de remote `origin`, zoals
+  die was bij je laatste `fetch`, `pull` of `push`. Git kijkt hiervoor niet
+  live op de server.
 
 `git status` laat niet de staging area zelf zien, maar alleen de **verschillen**:
 "Changes to be committed" is staging area vs HEAD (`git diff --staged`),
 "Changes not staged for commit" is working tree vs staging area  (`git diff`).
 Na een verse commit zijn alle drie gelijk en zegt `git status` "nothing to
-commit", maar de staging area is dan niet leeg.
+commit", maar de staging area is dan niet leeg. Het verschil tussen HEAD en
+`origin/main` zie je bovenaan `git status`, als "Your branch is ahead of
+'origin/main' by 1 commit".
 
 In de documentatie en foutmeldingen van Git heet de staging area ook wel de
 **index** of de **cache**. Het verwijst allemaal naar hetzelfde: het bestand
 `.git/index`. Bij `git diff` zijn `--cached` en `--staged` daarom synoniemen.
-Pas wel op: niet elke optie met "cache" of "stage" in de naam betekent
-hetzelfde in elk commando - `git ls-files --stage` gaat bijvoorbeeld over
-*stage-nummers* (zie stap 2), niet over "gestaged".
+Pas wel op: `git ls-files --stage` toont niet alleen wat je gewijzigd en
+gestaged hebt, zoals `git diff --staged`. Het toont de **hele** staging area.
+`--stage` voegt alleen extra kolommen toe: de mode, de hash en het
+stage-nummer (zie stap 2).
 
 ## Basisoefening
 
-Schrijf vanaf `template.sh` een script `staging-area.sh` (een gewone repo in
-`repos/` volstaat) dat het volgende doet:
+Schrijf vanaf `template.sh` een script `staging-area.sh` (een bare repo
+`origin` en één clone `alice` volstaan) dat in `alice` het volgende doet:
 
 1. Maak op `main` een eerste commit met twee bestanden: `hello.txt` met inhoud
-   `version 1`, en `other.txt`.
+   `version 1`, en `other.txt`. Push die naar `origin`.
 2. Bekijk met `git status` dat er niets te committen is, en daarna met
    `git ls-files --stage` dat de staging area toch beide bestanden bevat. Je
    ziet per bestand de mode, de hash van de inhoud en een stage-nummer. Dat
    nummer is normaal `0`; alleen tijdens een merge conflict staan er per
    bestand meerdere versies met de nummers 1, 2 en 3 (dat komt pas terug in
    oefening 022).
-3. Bekijk de versie van `hello.txt` in de laatste commit met
+3. Bekijk de versie van `hello.txt` op de remote met
+   `git show origin/main:hello.txt`, die in de laatste commit met
    `git show HEAD:hello.txt`, en die in de staging area met
-   `git show :hello.txt`. Ze zijn gelijk.
+   `git show :hello.txt`. Ze zijn alle drie gelijk.
 4. Zet `version 2` in `hello.txt` en doe `git add hello.txt`.
 5. Zet daarna `version 3` in `hello.txt`, zonder `git add`.
-6. Bekijk alle drie de versies: `git show HEAD:hello.txt`,
-   `git show :hello.txt` en `cat hello.txt`.
+6. Bekijk alle vier de versies: `git show origin/main:hello.txt`,
+   `git show HEAD:hello.txt`, `git show :hello.txt` en `cat hello.txt`.
 7. Bekijk met `git status` dat `hello.txt` in **beide** secties staat, en met
    `git diff --staged` en `git diff` welke twee verschillen dat zijn.
-8. Commit met `git commit -m "..."` (zonder `-a`) en bekijk de drie versies
-   opnieuw.
+8. Commit met `git commit -m "..."` (zonder `-a`), bekijk de vier versies
+   opnieuw en kijk wat `git status` nu over `origin/main` zegt.
+9. Push, en bekijk `git show origin/main:hello.txt` en `git status` nog een
+   keer.
 
-**Klaar wanneer:** na stap 6 zie je `version 1`, `version 2` en `version 3`,
-en na stap 8 bevat de nieuwe commit `version 2` - niet `version 3`, want die
-stond alleen in je working tree. Voorspel vóór elke `show`/`cat` wat je gaat
-zien.
+**Klaar wanneer:** na stap 6 zie je `version 1` (twee keer: `origin/main` en
+HEAD), `version 2` en `version 3`. Na stap 8 bevat de nieuwe commit
+`version 2` - niet `version 3`, want die stond alleen in je working tree - en
+staat `origin/main` nog op `version 1`. Na stap 9 staat ook `origin/main` op
+`version 2`. Voorspel vóór elke `show`/`cat` wat je gaat zien.
 
 ## Plus-oefeningen
 
 Dit zijn **losstaande oefeningen**, geen opvolgende delen. Elke oefening is een
 eigen scenario met een **eigen script** vanaf `template.sh`. Gebruik in elke
 oefening de commando's uit de basisoefening om steeds te laten zien in welke
-van de drie plekken een bestand staat.
+van de drie lokale plekken een bestand staat; een remote is hier niet nodig.
 
 ### Oefening P1 - een nieuw bestand
 

@@ -21,7 +21,7 @@ of meerdere **Plus-oefeningen** die meer uitdaging en verdieping geven.
 
 ### Working tree, de staging area en HEAD
 
-- [002 - Drie versies van een bestand](002-staging-area.md)
+- [002 - Vier versies van een bestand](002-staging-area.md)
 
 ### Terugkijken
 

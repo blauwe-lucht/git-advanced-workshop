@@ -9,7 +9,7 @@ runs through a scenario with `set -x` so every command is visible as it executes
 | --- | --- |
 | `commit.sh` | Creating a simple commit |
 | `collaborate.sh` | Alice and Bob working on feature branches and merging to main to emulate a PR/MR workflow |
-| `staging-area.sh` | One file with three different versions in `HEAD`, the staging area and the working tree, made visible with `git show HEAD:file`, `git show :file` and `cat`; `git ls-files --stage` shows the staging area holds every tracked file, and `git commit` takes the staging area, not the working tree |
+| `staging-area.sh` | One file with different versions in `origin/main`, `HEAD`, the staging area and the working tree, made visible with `git show origin/main:file`, `git show HEAD:file`, `git show :file` and `cat`; `git ls-files --stage` shows the staging area holds every tracked file, `git commit` takes the staging area, not the working tree, and `git push` moves `origin/main` |
 | `staging-area-new-file.sh` | A new file goes from working tree only, to staging area (`git add`), to `HEAD` (`git commit`) |
 | `staging-area-delete.sh` | `rm` only removes a file from the working tree, so it stays in the next commit; `git rm` also removes it from the staging area |
 | `staging-area-partial.sh` | `git add -p` stages one of two hunks, so the staging area holds a version of the file that never existed on disk (interactive) |
